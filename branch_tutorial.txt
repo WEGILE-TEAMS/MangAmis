@@ -1,0 +1,36 @@
+Cara buat branch baru & pull & push branch & merge with main BR:
+
+A. Buat Branch baru
+fungsi? Agar kita bisa saling mengerjakan bagian masing" tanpa mempengaruhi SC (source code) utama
+
+cara buat:
+1. Buat branch baru dengan: git branch 'nama_branch' (contoh: git branch nick-br)
+2. setelah itu jika sudah memiliki branch, cek branch yang ada dengan: git branch (nnti ada yang isi * , itu branch yg kalian pakai, jangan yang main, soalnya itu br utama)
+3. setelah itu jika kalian ingin pindah branch (misal main -> nick-br) cara: git checkout 'nama_branch' (contoh: git checkout nick-br)
+
+
+B. Menggunakan push (ke branch kalian)
+Ini ngepush, tapi ke branch kalian (belom di merge ke SC utama)
+Cara:
+1. setelah perubahan, ketik git add .
+2. lalu git commit -m 'message_for_the_change'
+3. git push -u origin 'your_branch', contoh git push -u origin nick-br
+
+C. Menggunakan pull (dari branch kalian)
+1. sebelum ini pastiin dlu branch kalian sama branch main sudah sama. kalau ngga, liat di poin D
+2. git pull
+3. kelar, gitu aj
+
+D. Merge branch with main branch:
+1. untuk cek commit, buka github, cari insight -> network, klau kalian ada commit hrusnya ada commit baru dari kalian dan kepisah ama main branch (main yang putih biasanya)
+2. klo ada commit, balik ke depan (<> Code) harusnya ada tulisan 'compare & pull request dari branch kalian, itu klik aj
+3. isi headline ama pesannya (apa aja yg kalian append), trus klik create pull request nya
+4. trus klik merge pull request (TAPI INI KALAU ADA PERBEDAAN PAS COMPARE DISCUSS DLU YA, JANGAN ASAL KLIK)
+5. confirm merge, kelar
+
+hasil yang D ini -> branch kalian ama main itu udah sama, sisa di pull (tahap C) baru kalian lanjut ngoding.
+
+INGET SELALU MERGE TRUS PULL SEBELUM START NGODING, KITA TIDAK PERNAH TAU KAPAN TIM KITA NGEPUSH (cth gw sering push jam 3.52 pagi :" )
+
+
+*ITU AJA DRI GW, KALO ADA TAMBAHAN, ya tambahin ya bee, ty semangat -nick*
