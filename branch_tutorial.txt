@@ -18,8 +18,9 @@ Cara:
 
 C. Menggunakan pull (dari branch kalian)
 1. sebelum ini pastiin dlu branch kalian sama branch main sudah sama. kalau ngga, liat di poin D
-2. git pull
-3. kelar, gitu aj
+2. git pull origin main (pull dari main, biar sama sama branch pribadi kita)
+3. git pull
+4. kelar, gitu aj
 
 D. Merge branch with main branch:
 1. untuk cek commit, buka github, cari insight -> network, klau kalian ada commit hrusnya ada commit baru dari kalian dan kepisah ama main branch (main yang putih biasanya)
