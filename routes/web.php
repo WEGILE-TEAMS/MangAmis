@@ -25,3 +25,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/test', function(){
+    return view('try_register');
+});
