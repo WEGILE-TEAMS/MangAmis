@@ -1,13 +1,3 @@
-@extends('master')
-
-@section('title')
-MangAmis - Register
-@endsection
-
-@section('styles')
-<link rel="stylesheet" href="{{ asset('Style/login.css') }}">
-@endsection
-
 @section('header')
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -33,12 +23,4 @@ MangAmis - Register
         </div>
     </div>
 </nav>
-@endsection
-
-@section('content')
-<div style="background-image: url('{{ asset('images/background/login_register.jpg') }}')"></div>
-@endsection
-
-@section('footer')
-
 @endsection
