@@ -1,5 +1,12 @@
-@section('header')
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+@extends('master')
+
+@section('styles')
+<link rel="stylesheet" href="{{ asset('Style/navbar.css') }}">
+@endsection
+
+@section('navbar')
+
+<nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="images/MangaMis.png" class="navbar_logo" alt="navbar-logo">
@@ -10,6 +17,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item nav-line">
+                    ____________________________________________________________________________________
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
@@ -19,8 +29,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Random</a>
                 </li>
+                <li class="nav-item nav-line">
+                    __________________________________________________________________
             </ul>
         </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search Manga" aria-label="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+        </form>
     </div>
 </nav>
 @endsection

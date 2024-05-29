@@ -26,6 +26,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/test', function(){
+Route::get('/navbar', function(){
+    return view('navbar');
+});
+Route::get('/reg', function(){
     return view('try_register');
 });
