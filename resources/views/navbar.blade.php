@@ -21,20 +21,26 @@
                     ____________________________________________________________________________________
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
+                        style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        aria-current=" page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Manga</a>
+                    <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
+                        style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        href="#">Manga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Random</a>
+                    <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
+                        style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        href="#">Random</a>
                 </li>
                 <li class="nav-item nav-line">
                     __________________________________________________________________
             </ul>
         </div>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search Manga" aria-label="Search">
+            <input class="form-control me-2 rounded-0" type="search" placeholder="Search Manga" aria-label="Search">
             <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
     </div>
