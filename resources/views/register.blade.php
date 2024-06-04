@@ -1,4 +1,5 @@
-@extends('./master')
+@extends('template/master')
+
 
 @section('title')
 Sign Up Page

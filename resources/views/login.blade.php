@@ -1,4 +1,4 @@
-@extends('./master')
+@extends('template/master')
 
 @section('title')
 Login Page
@@ -55,4 +55,5 @@ Login Page
         <img src="/images/MangaMis.png" alt="" />
     </div>
 </section>
+
 @endsection

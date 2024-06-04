@@ -1,4 +1,5 @@
-@extends('master')
+@extends('template/master')
+
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('Style/css/main.css') }}">
@@ -21,25 +22,22 @@
                         ____________________________________________________________________________________
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
-                            style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        <a class="nav-link fw-bolder  navbar-items" style="text-decoration: none; padding: 0 10px"
                             aria-current=" page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
-                            style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        <a class="nav-link fw-bolder navbar-items" style="text-decoration: none; padding: 0 10px"
                             href="#">Manga</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder icon-link link-opacity-50 icon-link-hover"
-                            style="--bs-link-hover-color-rgb: 200, 0, 0; text-decoration: none; padding: 0 10px"
+                        <a class="nav-link fw-bolder navbar-items" style="text-decoration: none; padding: 0 10px"
                             href="#">Random</a>
                     </li>
                     <li class="nav-item nav-line">
                         __________________________________________________________________
                 </ul>
             </div>
-            <form class="d-flex" role="search">
+            <form class="d-flex search-box" role="search">
                 <input class="form-control me-2 rounded-0" type="search" placeholder="Search Manga" aria-label="Search">
                 <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
             </form>
