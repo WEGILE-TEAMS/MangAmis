@@ -5,5 +5,6 @@
 }
 
 .nav-line {
-    margin: 2px;
+    margin: -6px;
+    text-decoration: none;
 }

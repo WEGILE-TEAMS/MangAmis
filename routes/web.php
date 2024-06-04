@@ -29,6 +29,6 @@ Route::get('/login', function () {
 Route::get('/navbar', function(){
     return view('navbar');
 });
-Route::get('/reg', function(){
-    return view('try_register');
+Route::get('/footer', function(){
+    return view('footer');
 });

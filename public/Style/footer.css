@@ -1,0 +1,7 @@
+.background-container {
+    background-image: url("/images/background/footer.jpg");
+    background-size: cover; /* or contain, depending on your preference */
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 75vh; /* Ensure the background covers the entire viewport height */
+}
