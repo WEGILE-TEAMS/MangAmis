@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-master,
+.btn-secondary,
+.btn-primary {
+    width: 241px;
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 15px 92px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+}
+.btn-master::after,
+.btn-secondary::after,
+.btn-primary::after {
+    position: absolute;
+    top: -18%;
+    left: -3.5%;
+    content: "";
+    width: 107%;
+    height: 54%;
+    border-radius: 2px;
+    border: 3px solid;
+    border-bottom: none;
+}
+.btn-master:before,
+.btn-secondary:before,
+.btn-primary:before {
+    position: absolute;
+    z-index: 0;
+    bottom: -18%;
+    left: -3.5%;
+    content: "";
+    width: 107%;
+    height: 54%;
+    border-radius: 2px;
+    border: 3px solid;
+    border-top: none;
+}
+
+.btn-primary {
+    background-color: #c11336;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #323232;
+}
+
+.btn-secondary {
+    background-color: #323232;
+    color: white;
+}
+.btn-secondary.btn-master::after,
+.btn-secondary::after,
+.btn-secondary.btn-master::before,
+.btn-secondary::before {
+    border-color: #323232;
+}
+.btn-secondary:hover {
+    background-color: #c11336;
+}
+/********************** NAVBAR ******************************/
+#navbar .navbar_logo {
+    width: 130px;
+    height: auto;
+    margin: -30px;
+}
+
+#navbar .nav-line {
+    margin: -6px;
+    text-decoration: none;
+}
+
+/*********************** FOOTER *****************************/
+.background-container {
+    background-image: url("/images/bg-footer.jpg");
+    background-size: cover; /* or contain, depending on your preference */
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 75vh; /* Ensure the background covers the entire viewport height */
+}
+
+/************************ LOGIN & REGISTER *******************************/
+#login {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/bg-auth.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+#login .container {
+    width: 40vw;
+    margin: 0 128px;
+}
+#login .container .form-group {
+    margin-bottom: 20px;
+}
+#login .container .form-group label {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+#login .container .form-group .form-control {
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+#login .form-control::placeholder {
+    color: rgb(128, 128, 128);
+    opacity: 1; /* Firefox */
+}
+
+#login .form-control::-ms-input-placeholder {
+    color: rgb(123, 123, 123);
+}
+
+#login .container .form-group .form-control:nth-child(2) {
+    position: relative;
+}
+#login .container h2 {
+    margin-bottom: 35px;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 100px;
+    color: #ffffff;
+}
+#login .container h2 span {
+    color: #c11336;
+}
+#login .container .btn:nth-child(1) {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#login .logo {
+    width: 40vw;
+}
+#login .logo img {
+    width: 50%;
+}
+
+/*************************** HOME ************************/
+#home #top-manga {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/bg-home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#home #top-manga .bg-line {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+#home #top-manga .bg-line .bg {
+    width: 95vw;
+    height: 90vh;
+    background-image: url("../../images/bg-line.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+#home #top-manga .content {
+    z-index: 1;
+}
+#home #top-manga .content .left-content {
+    height: 100vh;
+}
+#home #top-manga .content .left-content h4 {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -5px;
+    margin-bottom: 5px;
+}
+#home #top-manga .content .left-content .title {
+    width: 40vw;
+    height: 23%;
+    margin-left: -10%;
+    background-image: url("../../images/bg-paint.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 25px;
+}
+#home #top-manga .content .left-content .title h3 {
+    display: block;
+    padding-left: 4%;
+    color: #c11336;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -5px;
+}
+#home #top-manga .content .left-content p {
+    max-width: 80%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+#home #top-manga .content .left-content .btn-secondary {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    padding: 6px 30px;
+    margin-top: 5px;
+    color: black;
+    background-color: #ffffff;
+}
+#home #top-manga .content .left-content .btn-secondary::after,
+#home #top-manga .content .left-content .btn-secondary::before {
+    border-color: white;
+}
+#home #top-manga .content .left-content .btn-secondary:hover {
+    background-color: #7a7a7a;
+}
+#home #top-manga .content .right-content {
+    height: 100vh;
+}
+#home #top-manga .content .right-content .img-manga {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/gachi.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+} /*# sourceMappingURL=main.css.map */
