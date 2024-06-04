@@ -56,7 +56,7 @@ Sign Up Page
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <button class="btn btn-primary" type="submit">SIGN UP</button>
                     <!-- <a href="#" class="btn btn-primary" type="submit">SIGN UP</a> -->
-                    <a href="#" class="btn btn-secondary">SIGN IN</a>
+                    <a href="/login" class="btn btn-secondary">SIGN IN</a>
                 </div>
         </form>
     </div>

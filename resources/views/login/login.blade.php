@@ -45,7 +45,8 @@ Login Page
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <button class="btn btn-primary" type="submit">SIGN IN</button>
-                <button class="btn btn-secondary">SIGN UP</button>
+                <a href="/register" class="btn btn-secondary">SIGN UP</a>
+                <!-- <button class="btn btn-secondary">SIGN UP</button> -->
             </div>
         </form>
     </div>
