@@ -1,0 +1,82 @@
+#login {
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('../../images/bg-auth.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    .container {
+        width: 40vw;
+        margin: 0 128px;
+
+        .form-group {
+            margin-bottom: 20px;
+    
+            label {
+                margin-bottom: 10px;
+    
+                color: $white;
+                font-size: 18px;
+                font-weight: map-get($map: $font-weigths, $key: medium);
+            }
+    
+            .form-control {
+                width: 100%;
+    
+                padding: 12px 35px;
+                
+                border-radius: 2px;
+                border: 1px solid $white;
+                
+                color: $white;
+                background-color: transparent;
+
+                &:nth-child(2) {
+                    position: relative;
+
+                }
+
+            }
+            // .eye {
+            //     width: 24px;
+            //     height: 24px;
+
+            //     background-color: red($color: #ffffff);
+            // }
+        }
+    
+        h2 {
+            margin-bottom: 35px;
+    
+            font-size: 96px;
+            font-weight: map-get($map: $font-weigths, $key: semibold);
+            line-height: 100px;
+    
+            color: $white;
+    
+            span {
+                color: $red;
+            }
+        }
+
+        .btn:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .logo {
+        width: 40vw;
+        img {
+            width: 50%;
+        }
+    }
+}
