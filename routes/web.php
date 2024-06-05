@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UpdatedMangaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,7 @@ Route::get('/navbar', function(){
 Route::get('/footer', function(){
     return view('template.footer');
 });
+
+Route::get('/updated-manga', [
+    UpdatedMangaController::class, 'showUpdatedManga'
+]);
