@@ -15,10 +15,10 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [RegisterController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/', [RegisterController::class, 'index']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 
