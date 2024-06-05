@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UpdatedMangaController;
@@ -23,15 +24,15 @@ Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/navbar', function(){
     return view('navbar');
 });
-Route::get('/reg', function(){
-    return view('try_register');
+Route::get('/footer', function(){
+    return view('footer');
 });
 
 Route::get('/updated-manga', [
