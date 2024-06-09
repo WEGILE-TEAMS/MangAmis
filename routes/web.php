@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RegisterController;
+use GuzzleHttp\Client as HttpClient;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,4 @@ Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/home', [MangaController::class, 'index']);
