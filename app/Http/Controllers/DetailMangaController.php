@@ -42,31 +42,31 @@ class DetailMangaController extends Controller
     {
         $client = new Client();
         $response = $client->get("https://api.mangadex.org/manga/$mangaId/feed?limit=500&translatedLanguage[]=en");
-    
+
         if ($response->getStatusCode() == 200) {
             $data = json_decode($response->getBody(), true);
             $chapters = $data['data'];
-    
+            // dd($chapters);
             // Sort chapters by volume and chapter number
             usort($chapters, function($a, $b) {
                 $volumeA = isset($a['attributes']['volume']) ? (float)$a['attributes']['volume'] : 0;
                 $volumeB = isset($b['attributes']['volume']) ? (float)$b['attributes']['volume'] : 0;
-    
+
                 if ($volumeA == $volumeB) {
                     $chapterA = isset($a['attributes']['chapter']) ? (float)$a['attributes']['chapter'] : 0;
                     $chapterB = isset($b['attributes']['chapter']) ? (float)$b['attributes']['chapter'] : 0;
                     return $chapterA <=> $chapterB;
                 }
-    
+
                 return $volumeA <=> $volumeB;
             });
-    
+
             return $chapters;
         }
-    
+
         return [];
     }
-    
+
     private function getImageCover($id, $cover_id) {
         $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
         $apiUrl = "https://api.mangadex.org/manga";
@@ -101,13 +101,14 @@ class DetailMangaController extends Controller
         return $image;
     }
 
-    public function getSimilarManga() {
-        $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
-        $apiUrl = "https://api.mangadex.org/manga";
-        $baseImageUrl = "https://uploads.mangadex.org/covers/";
+    public function getSimilarManga()
+{
+    $client = new Client(['verify' => false]);
+    $apiUrl = "https://api.mangadex.org/manga";
+    $baseImageUrl = "https://uploads.mangadex.org/covers/";
+    $similar = [];
 
     try {
-        // Make the API request to fetch manga list
         $response = $client->get($apiUrl, [
             'headers' => [
                 'User-Agent' => 'YourAppName/1.0',
@@ -122,21 +123,20 @@ class DetailMangaController extends Controller
         $responseData = json_decode($response->getBody(), true);
         Log::info('Manga list response:', $responseData);
 
-        // dd($randomNumber);
         $temp = [];
         for ($x = 0; $x < 4; $x++) {
             $randomNumber = rand(0, 9);
-            if (!isset($responseData['data'][$x] )) {
+            if (!isset($responseData['data'][$randomNumber])) {
                 continue;
             }
-            for($i = 0; $i <= $x; $i++){
-                if($randomNumber == $temp[$i]){
-                    break;
-                }
-            }
-            $temp == $randomNumber;
 
-            $relationships = $responseData['data'][$x]['relationships'];
+            if (in_array($randomNumber, $temp)) {
+                continue;
+            }
+            $temp[] = $randomNumber;
+
+            $mangaData = $responseData['data'][$randomNumber];
+            $relationships = $mangaData['relationships'];
             $authorId = null;
 
             foreach ($relationships as $relationship) {
@@ -145,8 +145,8 @@ class DetailMangaController extends Controller
                 }
             }
 
-            $tags = $responseData['data'][$x]['attributes']['tags'];
-            $genres = []; 
+            $tags = $mangaData['attributes']['tags'];
+            $genres = [];
 
             foreach ($tags as $tag) {
                 $attributes = $tag['attributes'];
@@ -157,9 +157,8 @@ class DetailMangaController extends Controller
                 }
             }
 
-            // Find the cover relationship in the relationships array
             $coverId = null;
-            foreach ($responseData['data'][$x]['relationships'] as $relationship) {
+            foreach ($relationships as $relationship) {
                 if ($relationship['type'] === 'cover_art') {
                     $coverId = $relationship['id'];
                     break;
@@ -170,7 +169,6 @@ class DetailMangaController extends Controller
                 throw new Exception("Cover ID not found.");
             }
 
-            // Make a second API request to fetch the cover image details
             $coverResponse = $client->get("https://api.mangadex.org/cover/{$coverId}", [
                 'headers' => [
                     'User-Agent' => 'YourAppName/1.0',
@@ -182,27 +180,22 @@ class DetailMangaController extends Controller
                 throw new Exception("Failed to fetch cover details, status code: " . $coverResponse->getStatusCode());
             }
 
-            $mangaId = $responseData['data'][$x]['id'];
-
             $coverData = json_decode($coverResponse->getBody(), true);
             Log::info('Cover image response:', $coverData);
 
-            // Extract the cover file name
             $coverFileName = $coverData['data']['attributes']['fileName'];
+            $coverUrl = $baseImageUrl . $mangaData['id'] . '/' . $coverFileName;
 
-            // Construct the cover image URL
-            $coverUrl = $baseImageUrl . $mangaId . '/' . $coverFileName;
-    
             if ($authorId) {
                 $getAuthor = 'https://api.mangadex.org/author/' . $authorId;
-                $author = $client->get($getAuthor);
-                $author = json_decode($author->getBody(), true);
+                $authorResponse = $client->get($getAuthor);
+                $author = json_decode($authorResponse->getBody(), true);
 
                 if (isset($author['data']['attributes']['name'])) {
                     $similar[] = [
-                        "id" => $mangaId,
-                        "title" => $responseData['data'][$x]['attributes']['title']['en'] ?? 'N/A',
-                        "desc" => $responseData['data'][$x]['attributes']['description']['en'] ?? 'No description available',
+                        "id" => $mangaData['id'],
+                        "title" => $mangaData['attributes']['title']['en'] ?? 'N/A',
+                        "desc" => $mangaData['attributes']['description']['en'] ?? 'No description available',
                         "cover_id" => $coverId,
                         "image" => route('proxy-image', ['url' => urlencode($coverUrl)]),
                         "author_id" => $authorId,
@@ -212,13 +205,13 @@ class DetailMangaController extends Controller
                 }
             }
         }
-            return $similar;
-        } catch (Exception $e) {
-            Log::error('Error fetching manga data:', ['exception' => $e]);
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-    }
 
+        return $similar;
+    } catch (Exception $e) {
+        Log::error('Error fetching manga data:', ['exception' => $e]);
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+}
 
     public function proxyImage(Request $request)
     {
@@ -233,6 +226,6 @@ class DetailMangaController extends Controller
         ]);
 
         return response($response->getBody(), 200)
-        ->header('Content-Type', $response->getHeader('Content-Type'));
+        ->header('Content-Type', $response->getHeader('Content-Type')[0]);
     }
 }

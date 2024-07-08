@@ -5,6 +5,7 @@ use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Client as HttpClient;
 use App\Http\Controllers\DetailMangaController;
+use App\Http\Controllers\MangaHistoryController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -37,3 +38,6 @@ Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [Det
     ->where('genres', '.*')
     ->where('cover_id', '[a-zA-Z0-9\-]+')
     ->name('detailManga');
+
+Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');;
+Route::get('/history', [MangaHistoryController::class, 'show']);
