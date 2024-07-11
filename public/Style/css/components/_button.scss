@@ -1,0 +1,74 @@
+@import '../shared/color';
+@import '../shared/fonts';
+
+.btn-master {
+    width: 241px;
+
+    position: relative;
+
+    width: fit-content;
+    padding: 15px 92px;
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: map-get($map: $font-weigths, $key: medium);
+
+    border: none;
+    border-radius: 0;
+    
+    &::after {
+        position: absolute;
+        top: -18%;
+        left: -3.5%;
+        content: '';
+
+        width: 107%;
+        height: 54%;
+        
+        border-radius: 2px;
+        border: 3px solid map-get($map: $font-weigths, $key: light-grey);
+        border-bottom: none;
+    }
+
+    &:before {
+        position: absolute;
+        z-index: 0;
+        bottom: -18%;
+        left: -3.5%;
+        content: '';
+
+        width: 107%;
+        height: 54%;
+        
+        border-radius: 2px;
+        border: 3px solid map-get($map: $font-weigths, $key: light-grey);
+        border-top: none;
+    }
+}
+
+.btn-primary {
+    @extend .btn-master;
+    background-color: $red;
+    color: white;
+
+    &:hover {
+        background-color: $dark-grey;
+    }
+}
+
+.btn-secondary {
+    @extend .btn-master;
+    &.btn-master {
+        &::after, &::before {
+            border-color: $dark-grey;
+        }
+    }
+
+    background-color: $dark-grey;
+    color: white;
+
+    &:hover {
+        background-color: $red;
+    }
+}

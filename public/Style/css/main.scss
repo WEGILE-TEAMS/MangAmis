@@ -1,0 +1,21 @@
+// Requirement
+@import 'shared/fonts';
+@import 'components/button';
+
+// Pages
+@import 'pages/login';
+@import 'pages/home';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
