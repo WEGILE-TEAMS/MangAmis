@@ -8,6 +8,7 @@ use GuzzleHttp\Client as HttpClient;
 use App\Http\Controllers\DetailMangaController;
 use App\Http\Controllers\MangaHistoryController;
 use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\MangaController;
 use App\Http\Controllers\UpdatedMangaController;
 
 /*
@@ -24,6 +25,7 @@ use App\Http\Controllers\UpdatedMangaController;
 Route::get('/home', [MangaController2::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
     ->where('id', '[a-zA-Z0-9\-]+')
@@ -42,13 +44,16 @@ Route::get('/history', [MangaHistoryController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/navbar', function(){
-    return view('template.navbar');
-});
-Route::get('/footer', function(){
-    return view('template.footer');
-});
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
 ]);
+
+Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
+
+// Route::get('/navbar', function(){
+//     return view('template.navbar');
+// });
+// Route::get('/footer', function(){
+//     return view('template.footer');
+// });
