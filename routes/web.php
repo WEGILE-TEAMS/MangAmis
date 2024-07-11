@@ -29,10 +29,16 @@ Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard', function(){
+    return view('updatedmanga2');
+});
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
 ]);
+
 
 // Route::get('/navbar', function(){
 //     return view('template.navbar');
