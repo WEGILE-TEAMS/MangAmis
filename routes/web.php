@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MangaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/login', function () {
     return view('login');
@@ -29,3 +31,4 @@ Route::get('/login', function () {
 Route::get('/test', function(){
     return view('try_register');
 });
+Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
