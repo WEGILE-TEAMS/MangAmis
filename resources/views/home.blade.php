@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('template/master')
 
-    <title>Home</title>
-</head>
-<body>
+@section('title')
+    Home Page
+@endsection
+
+@section('content')
     @foreach($temp as $manga)
         @php
             $genresString = implode(',', $manga['genre']);
-            // dd($genresString);
         @endphp
         <h2>{{ $manga["title"] }}</h2>
         <h5>{{ $manga["author_name"] }}</h5>
@@ -27,16 +23,11 @@
         </a>
         <p>{{ $manga["desc"] }}</p>
     @endforeach
-
-
-    <title>Document</title>
-</head>
-<body>
+    
     <h1>Top Manga</h1>
     <div class="TopManga">
-        <h1>Judul =  {{ $temp[0]['title'] }}</h1>
-        <p>Description = {{ $temp[0]['desc'] }}</p>
-        <img src="{{ $temp[0]['image'] }}" alt="TopMangaImage">
+        <h1>Title =  {{ $topManga['title'] }}</h1>
+        <p>Description  = {{ $topManga['desc'] }}</p>
+        <img src="{{ $topManga['image'] }}" alt="TopMangaImage" width="300" height="450">
     </div>
-</body>
-</html>
+@endsection
