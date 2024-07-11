@@ -29,13 +29,14 @@ Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/navbar', function(){
-    return view('template.navbar');
-});
-Route::get('/footer', function(){
-    return view('template.footer');
-});
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
 ]);
+
+// Route::get('/navbar', function(){
+//     return view('template.navbar');
+// });
+// Route::get('/footer', function(){
+//     return view('template.footer');
+// });
