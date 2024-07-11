@@ -25,7 +25,7 @@ use App\Http\Controllers\UpdatedMangaController;
 Route::get('/home', [MangaController2::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/home', [MangaController::class, 'index']);
+// Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
     ->where('id', '[a-zA-Z0-9\-]+')
