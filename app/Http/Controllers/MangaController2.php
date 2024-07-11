@@ -6,9 +6,9 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class MangaController extends Controller
+class MangaController2 extends Controller
 {
-    public function randomManga()
+    public function index()
     {
         $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
         $apiUrl = "https://api.mangadex.org/manga";

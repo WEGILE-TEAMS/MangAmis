@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MangaController;
+use App\Http\Controllers\MangaController2;
 use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Client as HttpClient;
 use App\Http\Controllers\DetailMangaController;
@@ -21,8 +21,7 @@ use App\Http\Controllers\UpdatedMangaController;
 |
 */
 
-Route::get('/home', [MangaController::class, 'randomManga']);
-Route::get('/home', [MangaController::class, 'index']);
+Route::get('/home', [MangaController2::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -35,7 +34,7 @@ Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [Det
     ->where('cover_id', '[a-zA-Z0-9\-]+')
     ->name('detailManga');
 
-Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
+Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
 Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');;
 Route::get('/history', [MangaHistoryController::class, 'show']);
