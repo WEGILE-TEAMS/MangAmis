@@ -25,6 +25,8 @@ class DetailMangaController extends Controller
         $image = $this->getImageCover($id, $coverId);
         $similarManga = $this->getSimilarManga();
 
+        // dd($genres);
+
         return view('detailManga', [
             'title' => 'DetailManga',
             'manga_id' => $id,
@@ -150,7 +152,7 @@ class DetailMangaController extends Controller
 
             foreach ($tags as $tag) {
                 $attributes = $tag['attributes'];
-                if ($attributes['group'] === 'genre') {
+                if ($attributes['group'] === 'genre' || $attributes['group'] === 'theme') {
                     if (isset($attributes['name']['en'])) {
                         $genres[] = $attributes['name']['en'];
                     }

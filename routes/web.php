@@ -21,16 +21,34 @@ use App\Http\Controllers\UpdatedMangaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-// Route::get('/', [RegisterController::class, 'index']);
-
+Route::get('/home', [MangaController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
-Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
-
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
+    ->where('id', '[a-zA-Z0-9\-]+')
+    ->where('title', '.*')
+    ->where('author', '.*')
+    ->where('desc', '.*')
+    ->where('genres', '.*')
+    ->where('cover_id', '[a-zA-Z0-9\-]+')
+    ->name('detailManga');
+
+Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
+
+Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');;
+Route::get('/history', [MangaHistoryController::class, 'show']);
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/navbar', function(){
+    return view('template.navbar');
 });
+Route::get('/footer', function(){
+    return view('template.footer');
+});
+
+Route::get('/updated-manga', [
+    UpdatedMangaController::class, 'showUpdatedManga'
+]);

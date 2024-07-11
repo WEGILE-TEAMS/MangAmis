@@ -32,6 +32,7 @@ class MangaController extends Controller
         Log::info('Manga list response:', $responseData);
 
         for ($x = 0; $x < 4; $x++) {
+            // dd($responseData['data']);
             if (!isset($responseData['data'][$x])) {
                 continue;
             }
@@ -46,11 +47,11 @@ class MangaController extends Controller
             }
 
             $tags = $responseData['data'][$x]['attributes']['tags'];
-            $genres = []; 
+            $genres = [];
 
             foreach ($tags as $tag) {
                 $attributes = $tag['attributes'];
-                if ($attributes['group'] === 'genre') {
+                if ($attributes['group'] === 'genre' || $attributes['group'] === 'theme') {
                     if (isset($attributes['name']['en'])) {
                         $genres[] = $attributes['name']['en'];
                     }
@@ -92,7 +93,7 @@ class MangaController extends Controller
 
             // Construct the cover image URL
             $coverUrl = $baseImageUrl . $mangaId . '/' . $coverFileName;
-    
+
             if ($authorId) {
                 $getAuthor = 'https://api.mangadex.org/author/' . $authorId;
                 $author = $client->get($getAuthor);
@@ -137,7 +138,7 @@ class MangaController extends Controller
             }
 
             return response($response->getBody(), 200)
-                ->header('Content-Type', $response->getHeader('Content-Type'));
+                ->header('Content-Type', $response->getHeader('Content-Type')[0]);
 
         } catch (Exception $e) {
             Log::error('Error fetching image:', ['exception' => $e]);

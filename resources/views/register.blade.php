@@ -35,7 +35,7 @@ Sign Up Page
                 <div class="form-group">
                     <label for="">Email</label>
                     <input type="email" class="form-control @error('user_email') is-invalid @enderror" id="user_email"
-                        required value="{{old('user_email')}}" placeholder="Your email address" />
+                        name = "user_email" required value="{{old('user_email')}}" placeholder="Your email address" />
                 </div>
                 @error('user_email')
                 <div class="invalid-feedback">
@@ -46,7 +46,7 @@ Sign Up Page
                     <label for="">Password</label>
                     <div>
                         <input type="password" class="form-control @error('user_password') is-invalid @enderror"
-                            id="user_password" name="user_password" placeholder="Your password" required />
+                            id="user_password" name="password" placeholder="Your password" required />
                         @error('user_password')
                         <div class="invalid-feedback">
                             {{ $message }}
