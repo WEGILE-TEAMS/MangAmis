@@ -9,26 +9,25 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login',[
+        return view('login', [
             'title' => 'Login',
-            'active'=> 'login'
+            'active' => 'login'
         ]);
     }
 
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email'=>'required|email:dns',
-            'password'=>'required'
+            'user_email' => 'required|email:dns',
+            'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt(['user_email' => $credentials['user_email'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/home');
         }
 
-        return back()->with('loginError',"Login Failed!");
-
+        return back()->with('loginError', "Login Failed!");
     }
 
     public function logout()
@@ -38,7 +37,4 @@ class LoginController extends Controller
         request()->session()->regenerateToken();
         return redirect('/');
     }
-
-
-
 }

@@ -5,7 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
-class registerController extends Controller
+class RegisterController extends Controller
 {
     public function index() {
         return view('register', [
@@ -22,7 +22,11 @@ class registerController extends Controller
 
         $validatedData['user_password'] = Hash::make($validatedData['user_password']);
         // $request->session()->flash('success', 'Registration successfull! Please login');
-        User::create($validatedData);
-        return redirect('/login')->with('success', 'Registration successfull! Please login');
+        $user = User::create($validatedData);
+        if($user){
+            return redirect('/login')->with('success', 'Registration successfull! Please login');
+        }else{
+            return redirect('/register')->with('error', 'Registration failed! Try again');
+        }
     }
 }
