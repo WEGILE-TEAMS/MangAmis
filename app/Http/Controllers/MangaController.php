@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class MangaController extends Controller
 {
-    public function index()
+    public function randomManga()
     {
         $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
         $apiUrl = "https://api.mangadex.org/manga";

@@ -21,6 +21,7 @@ use App\Http\Controllers\UpdatedMangaController;
 |
 */
 
+Route::get('/home', [MangaController::class, 'randomManga']);
 Route::get('/home', [MangaController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
