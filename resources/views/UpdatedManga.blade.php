@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Updated Manga</title>
-</head>
-<body>
-    <h1>Updated Manga</h1>
+@extends('template/master')
+
+@section('title')
+    Updated Manga
+@endsection
+
+@section('content')
+<h1>Updated Manga</h1>
     <ul>
         @foreach($manga as $m)
             <li>
@@ -20,5 +21,4 @@
             </li>
         @endforeach
     </ul>
-</body>
-</html>
+@endsection
