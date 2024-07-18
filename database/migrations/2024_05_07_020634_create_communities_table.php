@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('manga_id');
             $table->string('content');
-            $table->string('image')->nullable()->default(null)->change();;
+            $table->string('image')->nullable()->default(null);
             $table->timestamps();
         });
     }

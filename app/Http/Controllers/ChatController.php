@@ -26,7 +26,8 @@ class ChatController extends Controller
                     'user_id'=>$user_id,
                     'comment'=>$comment,
                     'community_id'=>$community_id,
-                    'username' => $username
+                    'username' => $username,
+                    'chat_id' => $chat->id
                 ];
 
             }
@@ -48,5 +49,10 @@ class ChatController extends Controller
         $chat = Chat::create($credentials);
 
         return redirect()->route('viewChat', ['community_id' => $credentials['community_id']])->with('success', 'Berhasil nambah chat');
+    }
+
+    public function destroy(Chat $chat_id, $community_id) {
+        $chat_id->delete();
+        return redirect()->route('viewChat', ['community_id' => $community_id])->with('delete', "Hapus data chat berhasil");
     }
 }

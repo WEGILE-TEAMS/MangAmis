@@ -12,6 +12,7 @@ class Community extends Model
     protected $fillable = [
         'manga_id',
         'user_id',
-        'content'
+        'content',
+        'image'
     ];
 }

@@ -20,11 +20,18 @@ class DetailCommunityController extends Controller
                 $username = $user->username;
                 $comment = $detail->content;
                 $community_id = $detail->id;
+
+                if(isset($detail->image)) {
+                    $image = $detail->image;
+                } else {
+                    $image = [];
+                }
                 $detailArray[] = [
                     'user_id'=> $user_id,
                     'comment'=> $comment,
                     'community_id'=> $community_id,
-                    'username' => $username
+                    'username' => $username,
+                    'image' => $image
                 ];
 
             }

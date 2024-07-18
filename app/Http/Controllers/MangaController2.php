@@ -54,6 +54,8 @@ class MangaController2 extends Controller
                 if ($attributes['group'] === 'genre' || $attributes['group'] === 'theme') {
                     if (isset($attributes['name']['en'])) {
                         $genres[] = $attributes['name']['en'];
+                    } else {
+                        $genres[] ="";
                     }
                 }
             }

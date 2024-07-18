@@ -62,7 +62,8 @@ Route::post('/addCommunity', [CommunityController::class, 'addCommunity'])->name
 Route::get('/detailCommunity/{manga_id}', [DetailCommunityController::class, 'detailCommunity'])->name('detailCommunity');
 Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('viewChat');
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
-
+Route::delete('/chat/{chat_id}/{community_id}', [ChatController::class,'destroy'])
+->name('chat.destroy');
 // Route::get('/navbar', function(){
 //     return view('template.navbar');
 // });
