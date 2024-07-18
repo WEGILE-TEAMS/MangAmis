@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('community', function (Blueprint $table) {
-            $table->id('community_id');
+        Schema::create('communities', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('manga_id');
-            $table->string('comment');
+            $table->string('content');
+            $table->string('image')->nullable()->default(null)->change();;
             $table->timestamps();
         });
     }
