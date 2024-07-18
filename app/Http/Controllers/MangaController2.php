@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class MangaController2 extends Controller
 {
+    
     public function index()
     {
         $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
@@ -46,7 +47,8 @@ class MangaController2 extends Controller
                 }
             }
 
-            $tags = $responseData['data'][$x]['attributes']['tags'];
+            $tags = $responseData['data'][1]['attributes']['tags'];
+            // dd($tags);
             $genres = [];
 
             foreach ($tags as $tag) {
@@ -54,6 +56,8 @@ class MangaController2 extends Controller
                 if ($attributes['group'] === 'genre' || $attributes['group'] === 'theme') {
                     if (isset($attributes['name']['en'])) {
                         $genres[] = $attributes['name']['en'];
+                    } else {
+                        $genres[] = [];
                     }
                 }
             }

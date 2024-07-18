@@ -26,19 +26,16 @@ use App\Http\Controllers\ViewCommunityController;
 |
 */
 
-Route::get('/home', [MangaController2::class, 'index']);
+Route::get('/home', [MangaController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/testing', function () {
+    return view('home_front');
+});
 // Route::get('/home', [MangaController::class, 'index']);
 
-Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
-    ->where('id', '[a-zA-Z0-9\-]+')
-    ->where('title', '.*')
-    ->where('author', '.*')
-    ->where('desc', '.*')
-    ->where('genres', '.*')
-    ->where('cover_id', '[a-zA-Z0-9\-]+')
-    ->name('detailManga');
+Route::get('/detailManga', [MangaController::class, 'detailManga'])->name('detailManga');
 
 Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
@@ -62,10 +59,3 @@ Route::post('/addCommunity', [CommunityController::class, 'addCommunity'])->name
 Route::get('/detailCommunity/{manga_id}', [DetailCommunityController::class, 'detailCommunity'])->name('detailCommunity');
 Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('viewChat');
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
-
-// Route::get('/navbar', function(){
-//     return view('template.navbar');
-// });
-// Route::get('/footer', function(){
-//     return view('template.footer');
-// });

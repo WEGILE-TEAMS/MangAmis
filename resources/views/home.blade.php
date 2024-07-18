@@ -17,11 +17,11 @@
         <h5>{{ $manga["author_name"] }}</h5>
         <a href="{{ route('detailManga', [
             'id' => $manga['id'],
-            'title' => urlencode($manga['title']),
-            'author' => urlencode($manga['author_name']),
-            'desc' => urlencode($manga['desc']),
-            'genres' => urlencode($genresString),
-            'cover_id' => $manga['cover_id']
+            'title' => $manga['title'],
+            'author' => $manga['author_name'],
+            'desc' => $manga['desc'],
+            'genres' => $genresString,
+            'cover_url' => $manga['cover_url']
         ]) }}">
             <img src="{{ $manga['image'] }}" alt="" width="300" height="450">
         </a>
