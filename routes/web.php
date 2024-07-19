@@ -4,8 +4,9 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MangaController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UpdatedMangaController;
-
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,8 @@ Route::get('/updated-manga', [
 ]);
 
 Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
+Route::get('/search',[SearchController::class,'search'])->name('manga.search');
+Route::get('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 // Route::get('/navbar', function(){
 //     return view('template.navbar');
