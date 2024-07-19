@@ -23,6 +23,7 @@
                 <label for="username">Username</label>
                 <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required placeholder="Your username" />
                 @error('username')
+
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
@@ -43,7 +44,7 @@
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <button class="btn btn-primary" type="submit">SIGN UP</button>
                 <a href="/login" class="btn btn-secondary">SIGN IN</a>
-            </div>
+            </div
         </form>
     </div>
 
