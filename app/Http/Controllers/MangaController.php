@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Log;
 class MangaController extends Controller
 {
     // Get manga from api mangadex
-    private function baseApiRequest($client) {
+    private function baseApiRequest($client, $apiUrl) {
         try {
-            $apiUrl = "https://api.mangadex.org/manga";
             $response = $client->get($apiUrl, [
                 'headers' => [
                     'User-Agent' => 'YourAppName/1.0',
@@ -151,10 +150,10 @@ class MangaController extends Controller
                 if ($volumeA == $volumeB) {
                     $chapterA = isset($a['attributes']['chapter']) ? (float)$a['attributes']['chapter'] : 0;
                     $chapterB = isset($b['attributes']['chapter']) ? (float)$b['attributes']['chapter'] : 0;
-                    return $chapterA <=> $chapterB;
+                    return $chapterB <=> $chapterA;
                 }
 
-                return $volumeA <=> $volumeB;
+                return $volumeB <=> $volumeA;
             });
 
             return $chapters;
@@ -167,9 +166,10 @@ class MangaController extends Controller
     {
         try {
             $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
+            $apiUrl = "https://api.mangadex.org/manga";
 
             // Get manga
-            $data = $this->baseApiRequest($client);
+            $data = $this->baseApiRequest($client, $apiUrl);
             $data = $data['data'];
 
             for ($x = 0; $x < 4; $x++) {
@@ -208,9 +208,11 @@ class MangaController extends Controller
     {
         try {
             $client = new Client(['verify' => false]); // Ensure SSL/TLS verification
+            $apiUrl = "https://api.mangadex.org/manga";
+            $apiUrlGachiakuta = "https://api.mangadex.org/manga?title=Gachiakuta";
 
             // Get manga
-            $data = $this->baseApiRequest($client);
+            $data = $this->baseApiRequest($client, $apiUrl);
             $data = $data['data'];
 
             for ($x = 0; $x < 4; $x++) {
@@ -225,11 +227,13 @@ class MangaController extends Controller
                 // Get Cover
                 $coverUrl = $this->getCover($client, $data[$x]);
 
+                // dd($data[$x]['attributes']['description']['en']);
+
                 // Build final response
                 $temp[] = [
                     "id" => $data[$x]['id'],
                     "title" => $data[$x]['attributes']['title']['en'] ?? 'N/A',
-                    "desc" => $responseData['data'][$x]['attributes']['description']['en'] ?? 'No description available',
+                    "desc" => $data[$x]['attributes']['description']['en'] ?? 'No description available',
                     "cover_url" => $coverUrl,
                     "image" => route('proxy-image', ['url' => urlencode($coverUrl)]),
                     "author_name" => $author,
@@ -237,7 +241,21 @@ class MangaController extends Controller
                 ];
             }
 
-            return view('home', compact('temp'));
+            $dataTopManga = $this->baseApiRequest($client, $apiUrlGachiakuta);
+            $dataTopManga = $dataTopManga['data'][0];
+
+
+            $topManga = [
+                "id" => $dataTopManga['id'],
+                "title" => $dataTopManga['attributes']['title']['en'] ?? 'N/A',
+                "cover_url" => $this->getCover($client, $dataTopManga),
+                "desc" => $dataTopManga['attributes']['description']['en'] ?? 'No description available',
+                "image" => route('proxy-image', ['url' => urlencode($this->getCover($client, $dataTopManga))]),
+                "author_name" => $this->getAuthor($client, $dataTopManga),
+                "genre" => $this->getGenre($dataTopManga)
+            ];
+
+            return view('home', compact('temp', 'topManga'));
 
         } catch(Exception $errors) {
             Log::error('Error fetching manga data:', ['exception' => $errors]);
@@ -271,7 +289,7 @@ class MangaController extends Controller
             'similar' => $similarManga
         ];
 
-        // dd($chapters);
+        // dd($temp);
         return view('detail_manga', compact('temp'));
     }
     

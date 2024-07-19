@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-
+@include('template.navbar')
 <section id="home">
     <div id="top-manga">
         <div class="bg-line d-flex justify-content-center align-items-center">
@@ -14,10 +14,10 @@
                 <div class="col-md-6 left-content d-flex flex-column justify-content-center align-items-start">
                     <h4>Top Manga</h4>
                     <div class="title d-flex justify-content-center align-items-center">
-                        <h3>Gachiakuta</h3>
+                        <h3>{{ $topManga['title'] }}</h3>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed laborum, officia cumque vel nisi autem voluptatem ut similique odit cum consequatur repellat nemo ea pariatur doloremque totam hic non.
+                        {{ $topManga['desc'] }}
                     </p>
                     <div class="container-button">
                         <button class="btn btn-secondary">
@@ -82,42 +82,27 @@
             <h5>NEW UPDATED MANGA</h5>
             <div class="lines"></div>
             <div class="row d-flex justify-content-between align-items-center">
-                <div class="manga-card d-flex flex-column">
-                    <div class="img" style="background-image: url('images/dandan-book.jpg');"></div>
-                    <div class="title">
-                        Dandandan
-                    </div>
-                    <div class="chp-title">
-                        Chapter 110 : Beginning after the en...
-                    </div>
-                </div>
-                <div class="manga-card d-flex flex-column">
-                    <div class="img" style="background-image: url('images/kaijuu-cover.jpg');"></div>
-                    <div class="title">
-                        Kaijuu No.8
-                    </div>
-                    <div class="chp-title">
-                        Chapter 110 : Beginning after the en...
-                    </div>
-                </div>
-                <div class="manga-card d-flex flex-column">
-                    <div class="img" style="background-image: url('images/86-books.jpg');"></div>
-                    <div class="title">
-                        86
-                    </div>
-                    <div class="chp-title">
-                        Chapter 110 : Beginning after the en...
-                    </div>
-                </div>
-                <div class="manga-card d-flex flex-column">
-                    <div class="img" style="background-image: url('images/twaf.jpg');"></div>
-                    <div class="title">
-                        The World After The Fall
-                    </div>
-                    <div class="chp-title">
-                        Chapter 110 : Beginning after the en...
-                    </div>
-                </div>
+                @foreach ($temp as $manga)
+                    @php
+                        $genresString = implode(',', $manga['genre']);
+                    @endphp
+                    <a href="{{ route('detailManga', [
+                        'id' => $manga['id'],
+                        'title' => $manga['title'],
+                        'author' => $manga['author_name'],
+                        'desc' => $manga['desc'],
+                        'genres' => $genresString,
+                        'cover_url' => $manga['cover_url']
+                    ]) }}" class="manga-card d-flex flex-column">
+                        <div class="img" style="background-image: url('images/dandan-book.jpg');"></div>
+                        <div class="title">
+                            {{ $manga['title'] }}
+                        </div>
+                        <div class="chp-title">
+                            Chapter 110 : Beginning after the en...
+                        </div>
+                    </a>
+                @endforeach
             </div>
             <div class="row" style="margin-bottom: 90px;">
                 <div class="text-center">        
@@ -129,4 +114,5 @@
         </div>
     </div>
 </section>
+@include('template.footer')
 @endsection

@@ -3,7 +3,18 @@
 @section('title', 'Home Page')
 
 @section('content')
+@push('styles')
+    <style>
+        .chapter-item {
+            display: flex !important;
+        }
+        .chapter-item-top {
+            display: none !important;
+        }
+    </style>
+@endpush
 
+@include('template.navbar')
 <section class="base-detail">
     <div id="detail">
         <h5 class="slug container">Manga<span> > Detail</span></h5>
@@ -14,16 +25,31 @@
                     <h6 class="author">by {{ $temp['manga_author'] }}</h6>
                     <h4 class="title">{{ $temp['manga_title'] }}</h4>
                     <p class="synopsis">
-                        {{ $temp['manga_desc'] }}
+                        @php
+                            $desc = explode(" ", $temp['manga_desc']);
+                            if (count($desc) > 50) {
+                                $desc = implode(" ", array_slice($desc, 0, 50));
+                            } else {
+                                $desc = $temp['manga_desc'];
+                            }
+                        @endphp
+                        {{ $desc }}...
                     </p>
                     <h5 class="genres">
                         @foreach ($temp['genres'] as $key => $genre)
                             @if ($key % 2 == 0)
-                                {{ $genre }} / 
-                            @else
                                 <span>{{ $genre }}</span>
+                            @else
+                                {{ $genre }}
+                            @endif
+                            @if ($key < count($temp['genres']) - 1)
+                                /
+                            @endif
+                            @if (($key + 1) % 6 == 0 && $key < count($temp['genres']) - 1)
+                                <br> <br>
                             @endif
                         @endforeach
+
                     </h5>
                 </div>
                 <div class="btn-group d-flex flex-column justify-content-end align-items-center">
@@ -44,8 +70,8 @@
             <h5>List of Chapter</h5>
 
             @if (!empty($temp['chapters']))
-                @foreach ($temp['chapters'] as $chapter)
-                <a href="" class="chapter-item d-flex justify-content-between align-items-center">
+                @foreach ($temp['chapters'] as $index => $chapter)
+                <a href="#" class="chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
                     <div class="d-flex align-items-center">
                         <div class="chapter-cover"></div>
                         <h6 class="chapter-title">Chapter {{ $chapter['attributes']['chapter'] }} : {{ $chapter['attributes']['title'] }}</h6>
@@ -55,22 +81,22 @@
                         <div class="eye-icon"></div>
                         <span class="views-text">6k</span>
                     </div>
-                    <span class="chapter-number" >#104</span>
+                    <span class="chapter-number">#{{ $chapter['attributes']['chapter'] }}</span>
                 </a>
                 @endforeach
-                <div class="row my-5">
-                    <div class="text-center">        
-                        <div class="container-button">
-                            <button class="btn btn-secondary">Load More</button>
-                        </div>
-                    </div>
-                </div>
             @else
                 <p>No chapters available.</p>
             @endif
-            
 
-
+            @if (count($temp['chapters']) > 4)
+                <div class="row my-5">
+                    <div class="text-center">        
+                        <div class="container-button">
+                            <button id="show-all" class="btn btn-secondary">Show All</button>
+                        </div>
+                    </div>
+                </div>
+            @endif
             
         </div>
 
@@ -105,4 +131,29 @@
         </div>
     </div>
 </section>
+
+@include('template.footer')
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var showAllButton = document.getElementById('show-all');
+        if (showAllButton) {
+            console.log('Show All button found');
+            showAllButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                var chapters = document.querySelectorAll('.chapter-item');
+                chapters.forEach(function(chapter) {
+                    chapter.style.display = 'flex';
+                    chapter.style.removeProperty('display'); 
+                    chapter.classList.remove('chapter-item-top');
+                });
+            });
+            showAllButton.style.display = 'none';
+        } else {
+            console.log('Show All button not found');
+        }
+    });
+</script>
+@endpush
 @endsection

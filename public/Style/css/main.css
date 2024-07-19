@@ -489,7 +489,7 @@ body {
   height: fit-content;
 }
 #home #history .history-second .indicator .container-button .btn {
-  padding: 10px;
+  padding: 15px !important;
   background-color: #7A7A7A;
 }
 #home #history .history-second .indicator .container-button .btn img {
@@ -501,7 +501,7 @@ body {
   transform: rotate(180deg);
 }
 #home #history .history-second .indicator .lines {
-  width: 58.7%;
+  width: 56.7%;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 0;
@@ -595,10 +595,15 @@ body {
   font-weight: 300;
 }
 #detail .top-content .manga-detail .title {
-  color: #C11336;
+  color: #C11336; /* Make sure $red is defined in your CSS or SCSS */
   font-size: 96px;
   font-weight: 800;
   line-height: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Limits the number of lines */
+  text-overflow: ellipsis; /* Ensures that the overflow is handled with ellipsis */
 }
 #detail .top-content .manga-detail .synopsis {
   width: 45vw;
@@ -616,12 +621,16 @@ body {
 }
 #detail .top-content .btn-group {
   margin-bottom: 7.5%;
+  width: 30vw !important;
 }
 #detail .top-content .btn-group .btn-master, #detail .top-content .btn-group .btn-primary, #detail .top-content .btn-group .btn-secondary {
-  padding: 11px 45px;
+  padding: 11px 45px !important;
+}
+#detail .top-content .btn-group .btn-secondary {
+  width: 100% !important;
 }
 #detail .top-content .btn-group .container-button {
-  width: 100%;
+  width: 100% !important;
 }
 #detail .chapter-list h5 {
   color: #FFFFFF;
@@ -651,6 +660,11 @@ body {
 #detail .chapter-list .chapter-item .chapter-title {
   font-size: 24px;
   margin-left: 40px;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }
 #detail .chapter-list .chapter-item .chapter-views .eye-icon {
   width: 30px;

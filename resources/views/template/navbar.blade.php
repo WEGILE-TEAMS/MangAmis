@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('images/MangaMis.png') }}" class="navbar_logo" alt="navbar-logo">
+                <img src="{{ asset('images/logo-navbar.png') }}" class="navbar_logo" alt="navbar-logo">
                 <div class="lines"></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
