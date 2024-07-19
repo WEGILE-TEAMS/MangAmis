@@ -29,10 +29,11 @@ Route::get('/testing', function () {
 // Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/detailManga', [MangaController::class, 'detailManga'])->name('detailManga');
+Route::get('/read-manga/{mangaTitle}/{chapterId}', [MangaController::class, 'readManga'])->name('read.manga');
 
 Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
-Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');;
+Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');
 Route::get('/history', [MangaHistoryController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index']);

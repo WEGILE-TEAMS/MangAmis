@@ -71,7 +71,10 @@
 
             @if (!empty($temp['chapters']))
                 @foreach ($temp['chapters'] as $index => $chapter)
-                <a href="#" class="chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
+                <a href="{{ route('read.manga', [
+                    "mangaTitle" => $temp['title'],
+                    "chapterId" => $chapter['id']
+                ]) }}" class="chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
                     <div class="d-flex align-items-center">
                         <div class="chapter-cover"></div>
                         <h6 class="chapter-title">Chapter {{ $chapter['attributes']['chapter'] }} : {{ $chapter['attributes']['title'] }}</h6>
