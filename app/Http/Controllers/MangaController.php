@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Services\MangaDexService;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -8,6 +9,13 @@ use Illuminate\Support\Facades\Log;
 
 class MangaController extends Controller
 {
+    protected $mangaDexService;
+
+    public function __construct(MangaDexService $mangaDexService)
+    {
+        $this->mangaDexService = $mangaDexService;
+    }
+
     // Get manga from api mangadex
     private function baseApiRequest($client, $apiUrl) {
         try {
@@ -171,9 +179,15 @@ class MangaController extends Controller
             // Get manga
             $data = $this->baseApiRequest($client, $apiUrl);
             $data = $data['data'];
+            // dd($data);
 
+            $numbers = [];
             for ($x = 0; $x < 4; $x++) {
-                $randomNumber = rand(0, 9);
+                do {
+                    $randomNumber = rand(0, 9);
+                } while (in_array($randomNumber, $numbers)); // Ulangi jika angka sudah ada dalam array
+                
+                $numbers[] = $randomNumber;
                 if (!isset($data[$randomNumber])) continue;
                 
                 // Get Author
@@ -185,6 +199,9 @@ class MangaController extends Controller
                 // Get Cover
                 $coverUrl = $this->getCover($client, $data[$randomNumber]);
 
+                $chapters = $this->mangaDexService->getLatestChapter($data[$randomNumber]['id']);
+                // dd($chapters);
+
                 // Build final response
                 $similar[] = [
                     "id" => $data[$randomNumber]['id'],
@@ -194,6 +211,8 @@ class MangaController extends Controller
                     "image" => route('proxy-image', ['url' => urldecode($coverUrl)]),
                     "author_name" => $author,
                     "genre" => $genres,
+                    "chapter_number" => $chapters['attributes']['chapter'],
+                    "chapter_title" => $chapters['attributes']['title'],
                 ];
             }
 
@@ -212,9 +231,18 @@ class MangaController extends Controller
             $apiUrlGachiakuta = "https://api.mangadex.org/manga?title=Gachiakuta";
 
             // Get manga
-            $data = $this->baseApiRequest($client, $apiUrl);
-            $data = $data['data'];
+            // $data = $this->baseApiRequest($client, $apiUrl);
+            // $data = $data['data'];
 
+            $data = $this->mangaDexService->getUpdatedManga(4);
+
+            if (isset($data['error']) && $data['error']) {
+                return response()->json(['error' => $data['message']], 500);
+            }
+
+            
+            $data = $data['data'];
+            // dd($data);
             for ($x = 0; $x < 4; $x++) {
                 if (!isset($data[$x])) continue;
                 
@@ -238,8 +266,13 @@ class MangaController extends Controller
                     "image" => route('proxy-image', ['url' => urlencode($coverUrl)]),
                     "author_name" => $author,
                     "genre" => $genres,
+                    "chapter_title" => $data[$x]["latestChapter"]['attributes']['title'] ?? 'N/A',
+                    "chapter_number" => $data[$x]["latestChapter"]['attributes']['chapter'] ?? 'N/A'
                 ];
             }
+
+            
+
 
             $dataTopManga = $this->baseApiRequest($client, $apiUrlGachiakuta);
             $dataTopManga = $dataTopManga['data'][0];
@@ -273,7 +306,6 @@ class MangaController extends Controller
         $coverUrl = $request->query('cover_url');
         
         $chapters = $this->getChaptersFromMangaDex($id);
-        // dd($chapters);
 
         $similarManga = $this->getSimilarManga();
 

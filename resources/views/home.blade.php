@@ -112,7 +112,7 @@
                             {{ $manga['title'] }}
                         </div>
                         <div class="chp-title">
-                            Chapter 110 : Beginning after the en...
+                            Chapter {{ $manga['chapter_number'] }} : {{ $manga['chapter_title'] }}
                         </div>
                     </a>
                 @endforeach

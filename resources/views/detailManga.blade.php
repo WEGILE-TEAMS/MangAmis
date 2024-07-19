@@ -51,7 +51,7 @@
             ]) }}">
                 <img src="{{ $manga['image'] }}" alt="" width="300" height="450">
             </a>
-            <p>{{ $manga['desc'] }}</p>
+            <p>Chapter {{ $manga['chapter_title'] }} : {{ $manga['chapter_number'] }}</p>
         @endforeach
     </div>
 

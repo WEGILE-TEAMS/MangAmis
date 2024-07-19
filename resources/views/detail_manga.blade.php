@@ -102,7 +102,7 @@
 
         <div id="simillar-manga">
             <div class="container">
-                <h5>SIMILLAR MANGA</h5>
+                <h5>SIMILAR MANGA</h5>
                 <div class="lines"></div>
                 <div class="row d-flex justify-content-between align-items-center">
                     @foreach ($temp['similar'] as $manga)
@@ -122,7 +122,7 @@
                             {{ $manga['title'] }}
                         </div>
                         <div class="chp-title">
-                            Chapter 110 : Beginning after the en...
+                            Chapter {{ $manga['chapter_number'] }} : {{ $manga['chapter_title'] }}
                         </div>
                     </a>
                     @endforeach
