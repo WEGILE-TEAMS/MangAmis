@@ -16,7 +16,7 @@ class MangaDexService
         ]);
     }
 
-    public function getUpdatedManga($limit = 10)
+    public function getUpdatedManga($limit)
     {
         try {
             $response = $this->client->request('GET', '/manga', [
@@ -48,7 +48,7 @@ class MangaDexService
         }
     }
 
-    protected function getLatestChapter($mangaId)
+    public function getLatestChapter($mangaId)
     {
         try {
             $response = $this->client->request('GET', '/chapter', [

@@ -11,38 +11,29 @@ use GuzzleHttp\Client as HttpClient;
 use App\Http\Controllers\DetailMangaController;
 use App\Http\Controllers\MangaHistoryController;
 use Illuminate\Routing\Route as RoutingRoute;
-use App\Http\Controllers\MangaController;
 use App\Http\Controllers\UpdatedMangaController;
+use App\Http\Controllers\MangaController;
 use App\Http\Controllers\ViewCommunityController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" mid    dleware group. Now create something great!
-|
-*/
-
-Route::get('/home', [MangaController2::class, 'index']);
+Route::get('/home', [MangaController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/testing', function () {
+    return view('home_front');
+});
 // Route::get('/home', [MangaController::class, 'index']);
 
-Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
-    ->where('id', '[a-zA-Z0-9\-]+')
-    ->where('title', '.*')
-    ->where('author', '.*')
-    ->where('desc', '.*')
-    ->where('genres', '.*')
-    ->where('cover_id', '[a-zA-Z0-9\-]+')
-    ->name('detailManga');
+Route::get('/detailManga', [MangaController::class, 'detailManga'])->name('detailManga');
+Route::get('/read-manga/{mangaTitle}/{chapterId}', [MangaController::class, 'readManga'])->name('read.manga');
 
 Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
-Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');;
+Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');
 Route::get('/history', [MangaHistoryController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index']);

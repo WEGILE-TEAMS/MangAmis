@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="manga-item">
-        <h1>{{ $manga_title }}</h1>
-        <h3>{{ $manga_author }}</h3>
-        <img src="{{ $image }}" alt="" width="300" height="450">
-        <p>{{ $manga_desc }}</p>
-        @foreach ($genres as $genre)
+        <h1>{{ $temp['manga_title'] }}</h1>
+        <h3>{{ $temp['manga_author'] }}</h3>
+        <img src="{{ $temp['image'] }}" alt="" width="300" height="450">
+        <p>{{ $temp['manga_desc'] }}</p>
+        @foreach ($temp['genres'] as $genre)
             <h4>{{ $genre }}</h4>
         @endforeach
     </div>
@@ -38,7 +38,7 @@
 
     <div class="similarManga">
         <h2>Similar Manga</h2>
-        @foreach ($similar as $manga)
+        @foreach ($temp['similar'] as $manga)
             <h2>{{ $manga['title'] }}</h2>
             <h5>{{ $manga['author_name'] }}</h5>
             <a href="{{ route('detailManga', [
@@ -47,11 +47,11 @@
                 'author' => urlencode($manga['author_name']),
                 'desc' => urlencode($manga['desc']),
                 'genres' => urlencode(implode(',', $manga['genre'])),
-                'cover_id' => $manga['cover_id']
+                'cover_url' => urlencode($manga['cover_url'])
             ]) }}">
                 <img src="{{ $manga['image'] }}" alt="" width="300" height="450">
             </a>
-            <p>{{ $manga['desc'] }}</p>
+            <p>Chapter {{ $manga['chapter_title'] }} : {{ $manga['chapter_number'] }}</p>
         @endforeach
     </div>
 
