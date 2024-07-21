@@ -528,8 +528,10 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\ChatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatController.php',
         'App\\Http\\Controllers\\CommunityController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommunityController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DetailCommunityController' => __DIR__ . '/../..' . '/app/Http/Controllers/DetailCommunityController.php',
         'App\\Http\\Controllers\\DetailMangaController' => __DIR__ . '/../..' . '/app/Http/Controllers/DetailMangaController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\MangaController' => __DIR__ . '/../..' . '/app/Http/Controllers/MangaController.php',
@@ -548,6 +550,7 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Chat' => __DIR__ . '/../..' . '/app/Models/Chat.php',
         'App\\Models\\Community' => __DIR__ . '/../..' . '/app/Models/Community.php',
         'App\\Models\\MangaHistory' => __DIR__ . '/../..' . '/app/Models/MangaHistory.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

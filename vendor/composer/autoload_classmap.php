@@ -8,8 +8,10 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\ChatController' => $baseDir . '/app/Http/Controllers/ChatController.php',
     'App\\Http\\Controllers\\CommunityController' => $baseDir . '/app/Http/Controllers/CommunityController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DetailCommunityController' => $baseDir . '/app/Http/Controllers/DetailCommunityController.php',
     'App\\Http\\Controllers\\DetailMangaController' => $baseDir . '/app/Http/Controllers/DetailMangaController.php',
     'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\MangaController' => $baseDir . '/app/Http/Controllers/MangaController.php',
@@ -28,6 +30,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Models\\Chat' => $baseDir . '/app/Models/Chat.php',
     'App\\Models\\Community' => $baseDir . '/app/Models/Community.php',
     'App\\Models\\MangaHistory' => $baseDir . '/app/Models/MangaHistory.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
