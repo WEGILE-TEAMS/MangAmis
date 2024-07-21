@@ -13,7 +13,7 @@ class ChatController extends Controller
     public function viewChat($community_id){
         $chats = Chat::where('community_id', $community_id)->get();
         $count = $chats->count();
-
+        $user_id = Auth::id();
         if($count > 0) {
             foreach($chats as $chat){
                 $user_id = $chat->user_id;
@@ -34,9 +34,8 @@ class ChatController extends Controller
         } else {
             $chatArray = [];
         }
-
         return view('chat',['chats'=>$chatArray,
-            'community_id' => $community_id]);
+            'community_id' => $community_id, 'user_id' => $user_id]);
     }
 
     public function addChat(Request $request) {

@@ -14,13 +14,15 @@
                 <p>Chat : {{$chat['comment']}}</p>
             </div>
             <div>
-                <form action="{{route('chat.destroy', ['chat_id'=> $chat['chat_id'],
-                'community_id' => $community_id ])}}"
-                    method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="btn btn-danger ml-3">Delete</button>
-                </form>
+                @if ($chat['user_id'] == Auth::user()->id)
+                    <form action="{{route('chat.destroy', ['chat_id'=> $chat['chat_id'],
+                    'community_id' => $community_id ])}}"
+                        method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger ml-3">Delete</button>
+                    </form>
+                @endif
             </div>
         @endforeach
         <form action="{{ route('addChat') }}" method="POST">
