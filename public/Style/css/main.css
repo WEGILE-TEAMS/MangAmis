@@ -801,10 +801,11 @@ body {
   width: 35vw;
 }
 #read-manga .container .top-content .btn-group .container-button {
-  width: 48%;
+  width: 48% !important;
+  margin-left: 20px !important;
 }
 #read-manga .container .top-content .btn-group .container-button .btn-master, #read-manga .container .top-content .btn-group .container-button .btn-primary, #read-manga .container .top-content .btn-group .container-button .btn-secondary {
-  padding: 11px 45px;
+  padding: 11px 45px !important;
 }
 #read-manga .container .manga-panel {
   width: 100%;
@@ -826,7 +827,7 @@ body {
   padding-bottom: 20%;
 }
 #read-manga .manga-bottom .btn-group {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 #read-manga .manga-bottom .manga-detail {
   color: #FFFFFF;
@@ -859,12 +860,12 @@ body {
   width: 150%;
 }
 #read-manga .manga-bottom .manga-detail .chapter-groups .container-button {
-  width: 20%;
-  margin-right: 25px;
+  width: 20% !important;
+  margin-right: 25px !important;
 }
 #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-master, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-primary, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-secondary {
-  padding: 11px 20px;
-  background-color: transparent;
+  padding: 11px 20px !important;
+  background-color: transparent !important;
 }
 
 #manga {

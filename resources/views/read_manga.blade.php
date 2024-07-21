@@ -23,14 +23,13 @@
                 </h5>
                 <div class="d-flex justify-content-between">
                     <h5 class="chapter-title">
-                        {{-- A DOG <span>AND</span> A <span>CHAINSAW</span> --}}
                         {{ $chapterDetails['title'] }}
                     </h5>
-                    <div class="btn-group d-flex justify-content-between">
+                    <div class="btn-group d-flex justify-content-end">
                         @if ($prev)
                             <div class="container-button">
                                 <a href="{{ route('read.manga', [
-                                    "mangaTitle" => 1,
+                                    "mangaTitle" => request()->segment(2),
                                     "chapterId" => $prev
                                 ]) }}" class="btn btn-secondary">
                                     Prev Chapter
@@ -40,7 +39,7 @@
                         @if ($next)
                             <div class="container-button">
                                 <a href="{{ route('read.manga', [
-                                    "mangaTitle" => 1,
+                                    "mangaTitle" => request()->segment(2),
                                     "chapterId" => $next
                                 ]) }}" class="btn btn-primary">
                                 Next Chapter
@@ -66,7 +65,7 @@
                     @if ($prev)
                         <div class="container-button">
                             <a href="{{ route('read.manga', [
-                                "mangaTitle" => 1,
+                                "mangaTitle" => request()->segment(2),
                                 "chapterId" => $prev
                             ]) }}" class="btn btn-primary">
                                 Prev Chapter
@@ -74,14 +73,21 @@
                         </div>
                     @endif
                     <div class="container-button mx-3">
-                        <a href="/read-manga.html" class="btn btn-secondary">
+                        <a href="{{ route('detailManga', [
+                            'id' => $detailManga['id'],
+                            'title' => $detailManga['title'],
+                            'author' => $detailManga['author_name'],
+                            'desc' => $detailManga['desc'],
+                            'genres' => implode(',', $detailManga['genre']),
+                            'cover_url' => $detailManga['cover_url']
+                        ]) }}" class="btn btn-secondary">
                             Chapter List
                         </a>
                     </div>
                     @if ($next)
                         <div class="container-button">
                             <a href="{{ route('read.manga', [
-                                "mangaTitle" => 1,
+                                "mangaTitle" => request()->segment(2),
                                 "chapterId" => $next
                             ]) }}" class="btn btn-primary">
                             Next Chapter
