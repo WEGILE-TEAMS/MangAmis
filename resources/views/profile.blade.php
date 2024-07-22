@@ -1,7 +1,7 @@
 @extends('template/master')
 
 @section('title')
-Edit Profile
+Login Page
 @endsection
 
 @section('styles')
@@ -9,45 +9,49 @@ Edit Profile
 @endsection
 
 @section('content')
-<h2>Edit Profile</h2>
+<h2>Profile</h2>
 
-@if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
-@endif
+    @endif
 
-<form action="{{ route('profile.update') }}" method="POST">
-    @csrf
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" value="{{ old('name', $user->name) }}" required>
-        @error('name')
-            <div class="error">{{ $message }}</div>
-        @enderror
-    </div>
+    <form action="{{ route('profile.update') }}" method="POST" >
+        @csrf
+        @method('PUT')
 
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" value="{{ old('email', $user->email) }}" required>
-        @error('email')
-            <div class="error">{{ $message }}</div>
-        @enderror
-    </div>
 
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password">
-        @error('password')
-            <div class="error">{{ $message }}</div>
-        @enderror
-    </div>
+        <div class="form-group">
+            <label for="Username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="{{  $user->username }}">
+        </div>
 
-    <div>
-        <label for="password_confirmation">Confirm Password</label>
-        <input type="password" name="password_confirmation">
-    </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" id="user_email" name="user_email" placeholder="{{$user->user_email }}" >
+        </div>
 
-    <button type="submit">Update Profile</button>
-</form>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="user_password" name="user_password" placeholder="">
+        </div>
+
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
 @endsection
