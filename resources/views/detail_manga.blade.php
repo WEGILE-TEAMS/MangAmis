@@ -62,7 +62,13 @@
                         </button>
                     </div>
                     <div class="container-button">
-                        <a href="/read-manga.html" class="btn btn-primary">
+                        @php
+                            $lastIndex = count($temp['chapters']) - 1;
+                        @endphp
+                        <a href="{{ route('read.manga', [
+                            "mangaTitle" => $temp['title'],
+                            "chapterId" => $temp['chapters'][$lastIndex]['id']
+                        ]) }}" class="btn btn-primary">
                             Read First Chapter
                         </a>
                     </div>
