@@ -11,6 +11,7 @@
         @foreach ($chats as $chat)
             <div class="room">
                 <h6>Username: {{ $chat['username'] }}</h6>
+                <h6>{{ $chat['date'] }}</h6>
                 <p>Chat : {{$chat['comment']}}</p>
             </div>
             <div>

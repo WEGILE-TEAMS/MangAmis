@@ -12,6 +12,8 @@
             display: none !important;
         }
     </style>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 @endpush
 
 @include('template.navbar')
@@ -54,7 +56,8 @@
                 </div>
                 <div class="btn-group d-flex flex-column justify-content-end align-items-center">
                     <div class="container-button mb-3">
-                        <button class="btn btn-secondary">
+                        <button class="bookmark-link btn btn-secondary"
+                        data-manga-id="{{ $temp["manga_id"] }}" data-user-id="{{ Auth()->user()->id }}">
                             Save Manga
                         </button>
                     </div>
@@ -93,14 +96,14 @@
 
             @if (count($temp['chapters']) > 4)
                 <div class="row my-5">
-                    <div class="text-center">        
+                    <div class="text-center">
                         <div class="container-button">
                             <button id="show-all" class="btn btn-secondary">Show All</button>
                         </div>
                     </div>
                 </div>
             @endif
-            
+
         </div>
 
         <div id="simillar-manga">
@@ -118,7 +121,7 @@
                             'genres' => implode(',', $manga['genre']),
                             'cover_url' => $manga['cover_url']
                         ])
-                    }}" 
+                    }}"
                        class="manga-card d-flex flex-column">
                         <div class="img" style="background-image: url('{{ $manga['image'] }}');"></div>
                         <div class="title">
@@ -148,7 +151,7 @@
                 var chapters = document.querySelectorAll('.chapter-item');
                 chapters.forEach(function(chapter) {
                     chapter.style.display = 'flex';
-                    chapter.style.removeProperty('display'); 
+                    chapter.style.removeProperty('display');
                     chapter.classList.remove('chapter-item-top');
                 });
             });
@@ -157,6 +160,38 @@
             console.log('Show All button not found');
         }
     });
+
+    var bookmarkButton = document.querySelector('.bookmark-link');
+    if (bookmarkButton) {
+        bookmarkButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            var mangaId = this.getAttribute('data-manga-id');
+            var userId = this.getAttribute('data-user-id');
+
+            fetch('/save-bookmark', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    manga_id: mangaId,
+                    user_id: userId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+                } else {
+                    alert('Failed to bookmark manga');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    }
 </script>
 @endpush
 @endsection

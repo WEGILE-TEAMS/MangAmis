@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Community;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DetailCommunityController extends Controller
 {
@@ -31,7 +32,8 @@ class DetailCommunityController extends Controller
                     'comment'=> $comment,
                     'community_id'=> $community_id,
                     'username' => $username,
-                    'image' => $image
+                    'image' => $image,
+                    'date' => Carbon::parse($detail->created_at)->format('Y-m-d')
                 ];
 
             }

@@ -7,6 +7,7 @@ use App\Models\Chat;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ChatController extends Controller
 {
@@ -27,7 +28,8 @@ class ChatController extends Controller
                     'comment'=>$comment,
                     'community_id'=>$community_id,
                     'username' => $username,
-                    'chat_id' => $chat->id
+                    'chat_id' => $chat->id,
+                    'date' => Carbon::parse($chat->created_at)->format('Y-m-d')
                 ];
 
             }

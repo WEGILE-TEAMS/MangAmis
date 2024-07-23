@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DetailCommunityController;
@@ -34,11 +35,14 @@ Route::get('/read-manga/{mangaTitle}/{chapterId}', [MangaController::class, 'rea
 Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
 Route::post('/save-manga-history', [MangaHistoryController::class, 'saveMangaHistory'])->middleware('auth');
+Route::post('/save-bookmark', [BookmarkController::class, 'saveBookmark'])->middleware('auth');
+
 Route::get('/history', [MangaHistoryController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+Route::get('/profile', [BookmarkController::class, 'show']);
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'

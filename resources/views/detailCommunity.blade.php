@@ -17,6 +17,7 @@
     @if (!empty($details))
         @foreach ($details as $detail)
         <h2>Pembuat Post: {{ $detail['username'] }}</h2>
+        <h6>{{ $detail['date'] }}</h6>
         <a href="{{ route('viewChat', ['community_id' => $detail['community_id']]) }}">
             <div class="room">
                 <p>Topik : {{$detail['comment']}}</p>
