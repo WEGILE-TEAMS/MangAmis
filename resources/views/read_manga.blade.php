@@ -120,7 +120,10 @@
                     <div class="chapter-groups">
                         @foreach (array_slice($chapters, 0, 4) as $chp)
                             <div class="container-button chapter-item">
-                                <a href="/read-manga.html" class="btn btn-primary">
+                                <a href="{{ route('read.manga', [
+                                    "mangaTitle" => request()->segment(2),
+                                    "chapterId" => $chp['id']
+                                ]) }}" class="btn btn-primary {{ ( request()->segment(3) == $chp['id']) ? 'active' : '' }}">
                                     Chapter {{ $chp['attributes']['chapter'] }}
                                 </a>
                             </div>
