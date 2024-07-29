@@ -14,6 +14,7 @@ use App\Http\Controllers\MangaHistoryController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\UpdatedMangaController;
 use App\Http\Controllers\MangaController;
+use App\Http\Controllers\RandomMangaController;
 use App\Http\Controllers\ViewCommunityController;
 
 Route::get('/home', [MangaController::class, 'index'])->name('home');
@@ -29,6 +30,7 @@ Route::get('/testing', function () {
 });
 // Route::get('/home', [MangaController::class, 'index']);
 
+Route::get('/randomManga', [MangaController::class, 'randomManga'])->name('randomManga');
 Route::get('/detailManga', [MangaController::class, 'detailManga'])->name('detailManga');
 Route::get('/read-manga/{mangaTitle}/{chapterId}', [MangaController::class, 'readManga'])->name('read.manga');
 
