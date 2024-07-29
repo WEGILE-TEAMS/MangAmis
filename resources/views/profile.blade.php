@@ -43,7 +43,7 @@
         <div class="container">
             <div id="new-update">
                 <div class="container">
-                    <h5>NEW UPDATED MANGA</h5>
+                    <h5>BOOKMARKED MANGA</h5>
                     <div class="lines"></div>
                     <div class="row d-flex justify-content-between align-items-center">
                         <div class="manga-card d-flex flex-column">
