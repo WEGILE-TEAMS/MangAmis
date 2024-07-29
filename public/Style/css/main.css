@@ -993,6 +993,246 @@ body {
   max-lines: 2;
 }
 
+#profile {
+  width: 100%;
+}
+#profile .profile-information {
+  padding-top: 10%;
+  width: 100%;
+  height: 130vh;
+  background-image: url("../../images/bg-profile.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#profile .profile-information h5 {
+  color: #FFFFFF;
+  font-size: 60px;
+  font-weight: 700;
+}
+#profile .profile-information .photo-profile {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 100%;
+  border: 3px solid #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile .profile-information .photo-profile .inner-img {
+  width: 13.5vw;
+  height: 13.5vw;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+}
+#profile .profile-information .form-section {
+  margin-left: 100px;
+}
+#profile .profile-information .form-section .form-group {
+  display: flex !important;
+  margin-bottom: 30px;
+}
+#profile .profile-information .form-section .form-group label {
+  width: 250px;
+  margin-right: 20px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 24px;
+}
+#profile .profile-information .form-section .form-group .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  border-radius: 0;
+}
+#profile .profile-information .form-section .form-group .form-control:focus, #profile .profile-information .form-section .form-group .form-control:active {
+  border: none !important;
+  border-bottom: 2px solid #FFFFFF;
+}
+#profile #new-update {
+  width: 100%;
+}
+#profile #new-update .container {
+  margin-top: -25%;
+}
+#profile #new-update .container h5 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+#profile #new-update .container .lines {
+  width: 45%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  margin-bottom: 40px;
+}
+#profile #new-update .container .manga-card {
+  width: 20vw;
+  margin-bottom: 70px;
+}
+#profile #new-update .container .manga-card .img {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#profile #new-update .container .manga-card .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-lines: 1;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 2px;
+}
+#profile #new-update .container .manga-card .chp-title {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-lines: 2;
+}
+
+#community {
+  width: 100%;
+  height: 130vh;
+  background-image: url("../../images/bg-cover.png");
+}
+#community .layer1 {
+  width: 65vw;
+  height: 130vh;
+  background-color: black;
+}
+#community .layer1 .container {
+  height: 130vh;
+  padding: 13% 5%;
+  position: relative;
+}
+#community .layer1 .container .container-button {
+  width: 500px !important;
+  height: 7vh !important;
+  margin-bottom: 70px;
+}
+#community .layer1 .container .container-button input.form-control {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 15;
+  color: #FFFFFF;
+  border: none;
+}
+#community .layer1 .container .container-button input.form-control::-moz-placeholder {
+  color: #FFFFFF;
+}
+#community .layer1 .container .container-button input.form-control::placeholder {
+  color: #FFFFFF;
+}
+#community .layer1 .container .container-button input.form-control::-ms-clear {
+  width: 0;
+  height: 0;
+  display: none !important;
+}
+#community .layer1 .container .container-button .icon-search {
+  position: absolute;
+  top: 21%;
+  right: 5%;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../images/search.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#community .layer1 .container .manga-list {
+  height: 90vh;
+  overflow-y: scroll;
+}
+#community .layer1 .container .manga-list::-webkit-scrollbar {
+  display: none;
+}
+#community .layer1 .container .manga-list .manga-com {
+  padding-left: 70px;
+  margin-bottom: 32px;
+}
+#community .layer1 .container .manga-list .manga-com .lines {
+  width: 70%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+}
+#community .layer1 .container .manga-list .manga-com .manga-content {
+  margin-top: 17px;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+#community .layer1 .container .manga-list .manga-com .manga-content img {
+  width: 200px;
+  height: 285px;
+  margin-right: 28px;
+}
+#community .layer1 .container .manga-list .manga-com .manga-content .text {
+  color: #FFFFFF;
+}
+#community .layer1 .container .manga-list .manga-com .manga-content .text h5 {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 2%;
+}
+#community .layer1 .container .manga-list .manga-com .manga-content .text p {
+  font-size: 24px;
+}
+#community .layer1 .container .manga-list .manga-com:hover .manga-content {
+  background-color: #C11336;
+}
+
+#room-lists {
+  width: 100%;
+  height: 130vh;
+  background-image: url("../../images/bg-cover.png");
+}
+#room-lists .container {
+  height: 130vh;
+  overflow-y: scroll;
+}
+#room-lists .container::-webkit-scrollbar {
+  display: none;
+}
+#room-lists .container .room-card .container-button {
+  margin-top: 14px;
+}
+#room-lists .container .room-card .container-button img {
+  width: 635px;
+  height: 338px;
+  padding: 5px;
+}
+#room-lists .container .room-card .container-button::after, #room-lists .container .room-card .container-button::before {
+  border-color: #FFFFFF !important;
+}
+#room-lists .container .room-card .left {
+  color: #FFFFFF;
+}
+#room-lists .container .room-card .left h5 {
+  font-size: 48px;
+  font-weight: 500;
+}
+#room-lists .container .room-card .left .details-room span {
+  font-size: 24px;
+}
+#room-lists .container .room-card .left .details-room span:nth-child(2) {
+  color: #7A7A7A;
+}
+#room-lists .container .lines {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 2px;
+  background-color: #7A7A7A;
+}
+
 * {
   padding: 0;
   margin: 0;

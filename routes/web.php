@@ -53,3 +53,8 @@ Route::post('/addCommunity', [CommunityController::class, 'addCommunity'])->name
 Route::get('/detailCommunity/{manga_id}', [DetailCommunityController::class, 'detailCommunity'])->name('detailCommunity');
 Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('viewChat');
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
+
+
+Route::get('/profile', function () {
+    return view('profile'); 
+});
