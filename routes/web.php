@@ -17,7 +17,11 @@ use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RandomMangaController;
 use App\Http\Controllers\ViewCommunityController;
 
-Route::get('/home', [MangaController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('login');
+});
+
+Route::get('/home', [MangaController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -61,9 +65,3 @@ Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('v
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
 Route::delete('/chat/{chat_id}/{community_id}', [ChatController::class,'destroy'])
 ->name('chat.destroy');
-// Route::get('/navbar', function(){
-//     return view('template.navbar');
-// });
-// Route::get('/footer', function(){
-//     return view('template.footer');
-// });
