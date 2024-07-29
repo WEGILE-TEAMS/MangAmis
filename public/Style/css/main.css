@@ -424,14 +424,23 @@ body {
 #home #history .history-content .details {
   max-height: 100%;
   margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
 }
 #home #history .history-content .details h5 {
+  width: 500px;
   color: #FFFFFF;
   font-size: 64px;
   font-weight: 800;
   text-align: right;
   line-height: 60px;
   word-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-lines: 1;
 }
 #home #history .history-content .details p {
   max-width: 32vw;
@@ -866,6 +875,12 @@ body {
 #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-master, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-primary, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-secondary {
   padding: 11px 20px !important;
   background-color: transparent !important;
+}
+#read-manga .manga-bottom .manga-detail .chapter-groups .container-button:hover a {
+  color: #C11336 !important;
+}
+#read-manga .manga-bottom .manga-detail .chapter-groups .container-button a.active {
+  color: #C11336 !important;
 }
 
 #manga {

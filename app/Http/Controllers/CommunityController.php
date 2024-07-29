@@ -139,7 +139,8 @@ class CommunityController extends Controller
 
         $community = Community::create($credentials);
 
-        return redirect()->route('detailCommunity', ['manga_id' => $credentials['manga_id']])->with('success', 'Berhasil menambahkan post');
+        return redirect()->route('detailCommunity', ['manga_id' => $credentials['manga_id']])
+                         ->with('success', 'Berhasil nambah post');
     }
 
 

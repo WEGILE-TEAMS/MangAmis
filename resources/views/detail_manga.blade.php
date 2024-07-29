@@ -80,10 +80,13 @@
 
             @if (!empty($temp['chapters']))
                 @foreach ($temp['chapters'] as $index => $chapter)
-                <a href="{{ route('read.manga', [
+                <a 
+                href="{{ route('read.manga', [
                     "mangaTitle" => $temp['title'],
                     "chapterId" => $chapter['id']
-                ]) }}" class="chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
+                ]) }}" 
+                data-manga-id = "{{ $temp['manga_id'] }}" data-chapter-id="{{ $chapter['id'] }}"
+                class="manga-link chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
                     <div class="d-flex align-items-center">
                         <div class="chapter-cover"></div>
                         <h6 class="chapter-title">Chapter {{ $chapter['attributes']['chapter'] }} : {{ $chapter['attributes']['title'] }}</h6>
@@ -165,6 +168,63 @@
         } else {
             console.log('Show All button not found');
         }
+
+        // Update History
+        document.querySelectorAll('.manga-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                let mangaId = e.currentTarget.getAttribute('data-manga-id');
+                let chapterId = e.currentTarget.getAttribute('data-chapter-id');
+                let csrfToken = "{{ csrf_token() }}";
+                let href = e.currentTarget.getAttribute('href');
+
+                if (!mangaId || !chapterId) {
+                    console.error('Manga ID or Chapter ID is missing.');
+                    alert('Manga ID or Chapter ID is missing.');
+                    return;
+                }
+
+                fetch('/save-manga-history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        manga_id: mangaId,
+                        chapter_id: chapterId,
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text().then(text => {
+                        try {
+                            return JSON.parse(text);
+                        } catch (error) {
+                            console.error('Response is not valid JSON:', text);
+                            throw new Error(`Invalid JSON: ${error.message}`);
+                        }
+                    });
+                })
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = href;
+                    } else {
+                        alert('Failed to save manga history.');
+                        console.error('Server responded with an error:', data.message, data.errors);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while saving manga history.');
+                });
+            });
+        });
+
+
+
     });
 
     var bookmarkButton = document.querySelector('.bookmark-link');
