@@ -65,3 +65,13 @@ Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('v
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
 Route::delete('/chat/{chat_id}/{community_id}', [ChatController::class,'destroy'])
 ->name('chat.destroy');
+
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+
+Route::get('/profile', function () {
+    return view('profile');
+});
