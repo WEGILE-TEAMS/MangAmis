@@ -7,13 +7,14 @@ use App\Http\Controllers\DetailCommunityController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangaController2;
+use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Client as HttpClient;
 use App\Http\Controllers\DetailMangaController;
 use App\Http\Controllers\MangaHistoryController;
 use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UpdatedMangaController;
-use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RandomMangaController;
 use App\Http\Controllers\ViewCommunityController;
 
@@ -24,10 +25,7 @@ Route::get('/', function () {
 Route::get('/home', [MangaController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/testing', function () {
     return view('home_front');
@@ -48,7 +46,6 @@ Route::get('/history', [MangaHistoryController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/profile', [BookmarkController::class, 'show']);
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
@@ -56,6 +53,8 @@ Route::get('/updated-manga', [
 
 Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
 
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/community', [CommunityController::class, 'community'])->name('community');
 Route::get('/detailCommunity', [CommunityController::class, 'community'])->name('community');
 Route::post('/addCommunity', [CommunityController::class, 'addCommunity'])->name('addCommunity');
@@ -71,7 +70,3 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-
-Route::get('/profile', function () {
-    return view('profile');
-});
