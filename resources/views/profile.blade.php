@@ -5,6 +5,24 @@
 @section('content')
 @include('template.navbar')
 <section id="profile">
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="profile-information">
         <div class="container">
             <div class="d-flex justify-content-between">
@@ -21,27 +39,33 @@
                     <div class="photo-profile">
                         <div class="inner-img"></div>
                     </div>
-
                     <div class="form-section">
+                    <form action="{{ route('profile.update') }}" method="POST" >
+                        @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="username">Username:</label>
                             <input type="text" name="name" class="form-control" id="username" placeholder="{{ Auth::user()->username }}">
                         </div>
+
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="text" name="email" class="form-control" id="email" placeholder="{{ Auth::user()->user_email }}">
                         </div>
+
                         <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="text" name="password" class="form-control" id="password">
+                            <label for="Password">Password</label>
+                            <input type="password" class="form-control" id="user_password" name="user_password" placeholder="">
                         </div>
-                    </div>
-                </div>
-                <div class="text-end">
-                    <div class="container-button">
-                        <button class="btn btn-primary">
-                            Save
-                        </button>
+
+                        <div class="text-end">
+                            <div class="container-button">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>

@@ -1,15 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\MangaHistory;
 use App\Services\MangaDexService;
-use Exception;
-use GuzzleHttp\Client;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log; // Import the Log facade
+use Exception;
 
 class MangaController extends Controller
 {
@@ -93,7 +95,6 @@ class MangaController extends Controller
                 throw new Exception("Cover ID not found.");
             }
 
-            // Make a second API request to fetch the cover image details
             $coverResponse = $client->get("https://api.mangadex.org/cover/{$coverId}", [
                 'headers' => [
                     'User-Agent' => 'YourAppName/1.0',
@@ -112,8 +113,6 @@ class MangaController extends Controller
 
             // Extract the cover file name
             $coverFileName = $coverData['data']['attributes']['fileName'];
-
-            // Construct the cover image URL
             $coverUrl = $baseImageUrl . $mangaId . '/' . $coverFileName;
 
             return $coverUrl;
@@ -583,7 +582,7 @@ class MangaController extends Controller
             }
 
             return response($response->getBody(), 200)
-                ->header('Content-Type', $response->getHeader('Content-Type'));
+                ->header('Content-Type', $response->getHeader('Content-Type')[0]);
 
         } catch (Exception $e) {
             Log::error('Error fetching image:', ['exception' => $e]);
