@@ -60,14 +60,25 @@
                     </div>
                     <div class="container-button">
                         @php
-                            $lastIndex = count($temp['chapters']) - 1;
+                            $totalChapters = count($temp['chapters']); 
+
+                            if($totalChapters > 0) {
+                                $lastIndex = count($temp['chapters']) - 1;
+                            }
                         @endphp
+                        @if ($totalChapters > 0)
                         <a href="{{ route('read.manga', [
                             "mangaTitle" => $temp['title'],
                             "chapterId" => $temp['chapters'][$lastIndex]['id']
                         ]) }}" class="btn btn-primary">
                             Read First Chapter
                         </a>
+
+                        @else
+                        <a href="#" class="btn btn-primary disabled">
+                            Read First Chapter
+                        </a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -97,7 +108,11 @@
                 </a>
                 @endforeach
             @else
-                <p>No chapters available.</p>
+            <a 
+            href="#" 
+            class="manga-link chapter-item d-flex justify-content-center align-items-center">
+                <h5 class="title">No Chapters Available</h5>
+            </a>
             @endif
 
             @if (count($temp['chapters']) > 4)
