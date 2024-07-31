@@ -86,6 +86,7 @@ class ProfileController extends Controller
             // dd($temp);
 
         }
+        if(count($bookmarks) == 0) $temp = [];
         return $temp;
     }
 

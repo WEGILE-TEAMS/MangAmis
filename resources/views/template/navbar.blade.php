@@ -31,7 +31,7 @@
             </div>
             <form class="d-flex align-items-center search-box" role="search">
                 <div class="lines"></div>
-                <a href="{{ route('profile') }}" class="profile d-flex justify-content-center align-items-center {{ (Route::currentRouteName() == 'profile') ? 'active' : '' }}">
+                <a href="{{ route('profile.show') }}" class="profile d-flex justify-content-center align-items-center {{ (Route::currentRouteName() == 'profile.show') ? 'active' : '' }}">
                     <div class="circle"></div>
                 </a>
                 <div class="container-button">

@@ -111,7 +111,7 @@
                             if (count($desc) > 50) {
                                 $desc = implode(" ", array_slice($desc, 0, 50));
                             } else {
-                                $desc = $detailManga['manga_desc'];
+                                $desc = $detailManga['desc'];
                             }
                         @endphp
                         {{ $desc }}...
