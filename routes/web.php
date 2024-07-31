@@ -48,7 +48,7 @@ Route::get('/history', [MangaHistoryController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/profile', [BookmarkController::class, 'show']);
+Route::get('/profile', [BookmarkController::class, 'show'])->name('profile');
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
@@ -65,13 +65,3 @@ Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('v
 Route::post('/', [ChatController::class, 'addChat'])->name('addChat');
 Route::delete('/chat/{chat_id}/{community_id}', [ChatController::class,'destroy'])
 ->name('chat.destroy');
-
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-
-Route::get('/profile', function () {
-    return view('profile');
-});

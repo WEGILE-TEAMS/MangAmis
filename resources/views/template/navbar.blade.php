@@ -11,29 +11,29 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ (Route::currentRouteName() == 'home') ? 'active' : '' }}">
                         <a class="nav-link fw-bolder navbar-items"
                             aria-current=" page" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item" style="margin: 0 25px;">
+                    <li class="nav-item {{ (Route::currentRouteName() == '') ? 'active' : '' }}" style="margin: 0 25px;">
                         <a class="nav-link fw-bolder navbar-items"
                             href="{{ route('home') }}">Manga</a>
                     </li>
-                    <li class="nav-item" style="margin-right: 25px;">
+                    <li class="nav-item {{ (Route::currentRouteName() == 'randomManga') ? 'active' : '' }}" style="margin-right: 25px;">
                         <a class="nav-link fw-bolder navbar-items"
                             href="{{ route('randomManga') }}">Random</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (Route::currentRouteName() == 'community') ? 'active' : '' }}">
                         <a class="nav-link fw-bolder navbar-items"
-                            href="{{ route('home') }}">Community</a>
+                            href="{{ route('community') }}">Community</a>
                     </li>
                 </ul>
             </div>
             <form class="d-flex align-items-center search-box" role="search">
                 <div class="lines"></div>
-                <div class="profile d-flex justify-content-center align-items-center">
+                <a href="{{ route('profile') }}" class="profile d-flex justify-content-center align-items-center {{ (Route::currentRouteName() == 'profile') ? 'active' : '' }}">
                     <div class="circle"></div>
-                </div>
+                </a>
                 <div class="container-button">
                     <input class="form-control me-2 rounded-0" type="search" placeholder="Search Manga..." aria-label="Search">
                     <div class="icon-search"></div>

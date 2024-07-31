@@ -91,6 +91,7 @@ class BookmarkController extends Controller
             // dd($temp);
 
         }
+        if(count($bookmarks) == 0) $temp = [];
         return view('profile', ['bookmarks' => $temp]);
     }
 
