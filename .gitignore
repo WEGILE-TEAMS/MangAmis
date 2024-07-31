@@ -16,3 +16,6 @@
 # /.fleet
 # /.idea
 # /.vscode
+/storage/*
+!/storage/.gitignore
+/public/storage
