@@ -1,61 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Community</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@extends('template.master')
 
-    <style>
-        .room {
-            background-color: gray;
-        }
-    </style>
-</head>
-<body>
-    {{-- buat search bar --}}
-    <form action="{{ route('community') }}" method="GET">
-        <input type="text" name="query" placeholder="Enter manga title" value="{{ old('query', $query) }}">
-        <button type="submit">Search</button>
-    </form>
+@section('title', 'Community Page')
 
-    {{-- hasilnya di sini --}}
-    <div class="row">
-        <div class="col-sm-5 col-md-6">
-            @if(!empty($combinedList))
-            <h2>Search Results:</h2>
-            <ul>
-                @foreach ($combinedList as $manga)
-            <div>
-                <a href="{{route('detailCommunity', ['manga_id' =>$manga['id']])}}">
-                    <h2>{{ $manga['title'] }}</h2>
-                </a>
-                <img src="{{ $manga['image'] }}" alt="{{ $manga['title'] }}" style="height: 300px;width:300px">
-                <h3>{{ $manga['count'] }} Posts</h3>
+@section('content')
+@include('template.navbar')
+
+<section id="community">
+    <div class="layer1">
+        <div class="container">
+            <form action="{{ route('community') }}" class="d-flex align-items-center" method="GET">
+                <div class="container-button" style="margin-right: 20px !important;">
+                    <input class="form-control rounded-0" type="text" name="query" placeholder="Enter manga title" value="{{ old('query', $query) }}">
+                    <div class="icon-search"></div>
+                </div>
+                <div class="container-button" style="width: fit-content !important;">
+                    <button class="btn btn-primary" type="submit" style="padding: 7px 15px !important;">
+                        Search                        
+                    </button>
+                </div>
+            </form>
+            <div class="manga-list">
+                @if(!empty($combinedList))
+                    <h2 class="text-light">Search Results:</h2>
+                        @foreach ($combinedList as $manga)
+                    <a href="{{route('detailCommunity', ['manga_id' =>$manga['id']])}}" class="manga-com" style="text-decoration: none;">
+                        <div class="lines"></div>
+                        <div class="manga-content">
+                            <img src="{{ $manga['image'] }}" alt="">
+                            <div class="text">
+                                <h5>{{ $manga['title'] }}</h5>
+                                <p>{{ $manga['count'] }} Posts</p>
+                            </div>
+                        </div>
+                    </a>
+                    @endforeach
+                @endif
+
+                @if (!empty($communities))
+                    @foreach ($communities as $community)
+                        <a href="{{route('detailCommunity', ['manga_id' =>$community['id']])}}" class="manga-com" style="text-decoration: none;">
+                            <div class="lines"></div>
+                            <div class="manga-content">
+                                <img src="{{ $community['image'] }}" alt="">
+                                <div class="text">
+                                    <h5>{{ $community['title'] }}</h5>
+                                    <p>{{ $community['count'] }} Posts</p>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                @elseif ($query)
+
+                @else
+                    Belum ada komunitas yang terbentuk!
+                @endif
             </div>
-            @endforeach
-            </ul>
-        @endif
-
-        {{-- ini buat community yang udah terbentuk --}}
-        @if (!empty($communities))
-            @foreach ($communities as $community)
-                <a href="{{route('detailCommunity', ['manga_id' =>$community['id']])}}">
-                    <h2>{{ $community['title'] }}</h2>
-                </a>
-                <img src="{{ $community['image'] }}" alt="" style="height: 300px;width:300px">
-                <h3>{{ $community['count'] }} Posts</h3>
-            @endforeach
-        @elseif ($query)
-
-        @else
-            Belum ada komunitas yang terbentuk!
-        @endif
         </div>
     </div>
+</section>
 
-</script>
-</body>
-</html>
+@include('template.footer')
+@endsection

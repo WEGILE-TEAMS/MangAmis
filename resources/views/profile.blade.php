@@ -4,25 +4,15 @@
 
 @section('content')
 @include('template.navbar')
+@push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+    <style>
+        .errors {
+            background-color: #C11336 !important;
+        }
+    </style>
+@endpush
 <section id="profile">
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
     <div class="profile-information">
         <div class="container">
             <div class="d-flex justify-content-between">
@@ -112,4 +102,33 @@
     </div>
 </section>
 @include('template.footer')
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script>
+
+@if (session('success'))
+<script>
+    Toastify({
+    text: "{{ session('success') }}",
+    duration: 3000,
+    style: {
+        background: "linear-gradient(to right, rgb(0, 176, 155), rgb(150, 201, 61))",
+    },
+    }).showToast();
+</script>
+@endif
+
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <script>
+        Toastify({
+        text: "{{ $error }}",
+        className: 'errors',
+        backgroundColor: '#C11336',
+        duration: 3000,
+        }).showToast();
+    </script> 
+    @endforeach   
+@endif
+
+@endpush
 @endsection
