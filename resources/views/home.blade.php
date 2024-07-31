@@ -22,7 +22,7 @@
                             $topDesc = explode(" ", $topManga['desc']);
                             $topDesc = implode(" ", array_slice($topDesc, 0, 20));
                         @endphp
-                        
+
                         {{ $topDesc }}
                     </p>
                     <div class="container-button">
@@ -49,92 +49,98 @@
             <h4 class="title">READ AGAIN</h4>
             <div class="lines"></div>
             <div class="col-md-8 history-content d-flex justify-content-end align-end-end">
-                <div class="details">
-                    <p>by {{ $history[0]['author_name'] }}</p>
-                    <h5>{{ $history[0]['title'] }}</h5>
-                    <p>
-                        @php
-                            $desc = explode(" ", $history[0]['desc']);
-                            if (count($desc) > 40) {
-                                $desc = implode(" ", array_slice($desc, 0, 40));
-                            } else {
-                                $desc = $history[0]['desc'];
-                            }
-                        @endphp
-                        {{ $desc }}...
-                    </p>
-                </div>
-                <div class="cover-manga-active" style="background-image: url('{{ $history[0]['image'] }}')">                 
-                </div>
-            </div>
-            <div class="d-flex justify-content-end col-md-8 group-btn">
-                @php
-                    $genresString = implode(',', $history[0]['genre']);
-                @endphp
-                <div class="container-button">
-                    <a href="{{ route('detailManga', [
-                        'id' => $history[0]['id'],
-                        'title' => $history[0]['title'],
-                        'author' => $history[0]['author_name'],
-                        'desc' => $history[0]['desc'],
-                        'genres' => $genresString,
-                        'cover_url' => $history[0]['cover_url']
-                    ]) }}" class="btn btn-secondary">Details</a>
-                </div>
-                <div class="container-button">
-                    <button class="btn btn-primary">Read</button>
-                </div>
-            </div>
-            <div class="row justify-content-end col-md-8 history-second">
-                @foreach ($history as $key => $item)
-                    @if ($key >= 1) <!-- Mulai dari indeks kedua (0-based index) -->
-                        @php
-                            $genresString = implode(',', $item['genre']);
-                        @endphp
-                        <a href="{{ route('detailManga', [
-                            'id' => $item['id'],
-                            'title' => $item['title'],
-                            'author' => $item['author_name'],
-                            'desc' => $item['desc'],
-                            'genres' => $genresString,
-                            'cover_url' => $item['cover_url']
-                        ]) }}" class="col-md-3 cover-manga" style="background-image: url('{{ $item['image'] }}')">
-                        </a>
-                    @endif
-                @endforeach
-                <div class="indicator col-md-12 d-flex justify-content-end align-items-center">
-                    <div class="d-flex">
-                        @if ($history->onFirstPage())
-                        <div class="container-button prev">
-                            <button class="btn btn-secondary" disabled>
-                                <img src="images/next-icon.png" alt="Previous">
-                            </button>
+                @if (!empty($history[0]))
+                        <div class="details">
+                            <p>by {{ $history[0]['author_name'] }}</p>
+                            <h5>{{ $history[0]['title'] }}</h5>
+                            <p>
+                                @php
+                                    $desc = explode(" ", $history[0]['desc']);
+                                    if (count($desc) > 40) {
+                                        $desc = implode(" ", array_slice($desc, 0, 40));
+                                    } else {
+                                        $desc = $history[0]['desc'];
+                                    }
+                                @endphp
+                                {{ $desc }}...
+                            </p>
                         </div>
-                        @else
-                        <div class="container-button prev">
-                            <button class="btn btn-secondary" onclick="location.href='{{ $history->previousPageUrl().'#history' }}'">
-                                <img src="images/next-icon.png" alt="Previous">
-                            </button>
+                        <div class="cover-manga-active" style="background-image: url('{{ $history[0]['image'] }}')">
                         </div>
-                        @endif
-                        @if ($history->hasMorePages())
-                        <div class="container-button next">
-                            <button class="btn btn-secondary" onclick="location.href='{{ $history->nextPageUrl().'#history' }}'">
-                                <img src="images/next-icon.png" alt="Next">
-                            </button>
-                        </div>
-                        @else
-                            <div class="container-button next">
-                                <button class="btn btn-secondary" disabled>
-                                    <img src="images/next-icon.png" alt="Next">
-                                </button>
-                            </div>
-                        @endif
                     </div>
-                    <div class="lines"></div>
-                    <h5>{{ $history->currentPage() }} / {{ $history->lastPage() }}</h5>
-                </div>
-            </div>
+                    <div class="d-flex justify-content-end col-md-8 group-btn">
+                        @php
+                            $genresString = implode(',', $history[0]['genre']);
+                        @endphp
+                        <div class="container-button">
+                            <a href="{{ route('detailManga', [
+                                'id' => $history[0]['id'],
+                                'title' => $history[0]['title'],
+                                'author' => $history[0]['author_name'],
+                                'desc' => $history[0]['desc'],
+                                'genres' => $genresString,
+                                'cover_url' => $history[0]['cover_url']
+                            ]) }}" class="btn btn-secondary">Details</a>
+                        </div>
+                        <div class="container-button">
+                            <button class="btn btn-primary">Read</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end col-md-8 history-second">
+                        @foreach ($history as $key => $item)
+                            @if ($key >= 1) <!-- Mulai dari indeks kedua (0-based index) -->
+                                @php
+                                    $genresString = implode(',', $item['genre']);
+                                @endphp
+                                <a href="{{ route('detailManga', [
+                                    'id' => $item['id'],
+                                    'title' => $item['title'],
+                                    'author' => $item['author_name'],
+                                    'desc' => $item['desc'],
+                                    'genres' => $genresString,
+                                    'cover_url' => $item['cover_url']
+                                ]) }}" class="col-md-3 cover-manga" style="background-image: url('{{ $item['image'] }}')">
+                                </a>
+                            @endif
+                        @endforeach
+                        <div class="indicator col-md-12 d-flex justify-content-end align-items-center">
+                            <div class="d-flex">
+                                @if ($history->onFirstPage())
+                                <div class="container-button prev">
+                                    <button class="btn btn-secondary" disabled>
+                                        <img src="images/next-icon.png" alt="Previous">
+                                    </button>
+                                </div>
+                                @else
+                                <div class="container-button prev">
+                                    <button class="btn btn-secondary" onclick="location.href='{{ $history->previousPageUrl().'#history' }}'">
+                                        <img src="images/next-icon.png" alt="Previous">
+                                    </button>
+                                </div>
+                                @endif
+                                @if ($history->hasMorePages())
+                                <div class="container-button next">
+                                    <button class="btn btn-secondary" onclick="location.href='{{ $history->nextPageUrl().'#history' }}'">
+                                        <img src="images/next-icon.png" alt="Next">
+                                    </button>
+                                </div>
+                                @else
+                                    <div class="container-button next">
+                                        <button class="btn btn-secondary" disabled>
+                                            <img src="images/next-icon.png" alt="Next">
+                                        </button>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="lines"></div>
+                            <h5>{{ $history->currentPage() }} / {{ $history->lastPage() }}</h5>
+                        </div>
+                    </div>
+                @else
+                    <span class="text-white">
+                        No history yet
+                    </span>
+                @endif
         </div>
     </div>
     <div id="new-update">
@@ -165,7 +171,7 @@
                 @endforeach
             </div>
             <div class="row" style="margin-bottom: 90px;">
-                <div class="text-center">        
+                <div class="text-center">
                     <div class="container-button">
                         <button class="btn btn-secondary">See More</button>
                     </div>

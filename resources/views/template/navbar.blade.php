@@ -21,7 +21,7 @@
                     </li>
                     <li class="nav-item" style="margin-right: 25px;">
                         <a class="nav-link fw-bolder navbar-items"
-                            href="{{ route('home') }}">Random</a>
+                            href="{{ route('randomManga') }}">Random</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bolder navbar-items"

@@ -7,13 +7,14 @@ use App\Models\Chat;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ChatController extends Controller
 {
     public function viewChat($community_id){
         $chats = Chat::where('community_id', $community_id)->get();
         $count = $chats->count();
-
+        $user_id = Auth::id();
         if($count > 0) {
             foreach($chats as $chat){
                 $user_id = $chat->user_id;
@@ -26,16 +27,17 @@ class ChatController extends Controller
                     'user_id'=>$user_id,
                     'comment'=>$comment,
                     'community_id'=>$community_id,
-                    'username' => $username
+                    'username' => $username,
+                    'chat_id' => $chat->id,
+                    'date' => Carbon::parse($chat->created_at)->format('Y-m-d')
                 ];
 
             }
         } else {
             $chatArray = [];
         }
-
         return view('chat',['chats'=>$chatArray,
-            'community_id' => $community_id]);
+            'community_id' => $community_id, 'user_id' => $user_id]);
     }
 
     public function addChat(Request $request) {
@@ -48,5 +50,10 @@ class ChatController extends Controller
         $chat = Chat::create($credentials);
 
         return redirect()->route('viewChat', ['community_id' => $credentials['community_id']])->with('success', 'Berhasil nambah chat');
+    }
+
+    public function destroy(Chat $chat_id, $community_id) {
+        $chat_id->delete();
+        return redirect()->route('viewChat', ['community_id' => $community_id])->with('delete', "Hapus data chat berhasil");
     }
 }

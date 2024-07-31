@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class MangaController2 extends Controller
 {
-    
+
     public function index()
     {
         $client = new Client(['verify' => false]); // Ensure SSL/TLS verification

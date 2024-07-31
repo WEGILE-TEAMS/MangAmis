@@ -124,22 +124,35 @@ class CommunityController extends Controller
         $credentials = $request->validate([
             'manga_id' => 'required',
             'content' => 'required',
+            'image' => 'nullable|file|mimes:jpeg,jpg,png,gif,mp4,mp3,mov,avi|max:2048'
         ]);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
+            $credentials['image'] = $filePath;
+            $credentials['image_name'] = $fileName;
+        }
+
         $credentials['user_id'] = Auth::user()->id;
-        // dd($credentials);
+
         $community = Community::create($credentials);
 
         return redirect()->route('detailCommunity', ['manga_id' => $credentials['manga_id']])
                          ->with('success', 'Berhasil nambah post');
     }
 
+
+
     public function viewCommunity(){
         $communities=Community::all();
         $count = $communities->count();
         // dd($count);
+        $uniqueMangaIds = $communities->unique('manga_id');
         if($count > 0) {
 
-            foreach($communities as $community) {
+            foreach($uniqueMangaIds as $community) {
                 $manga_id = $community->manga_id;
                 $count = DB::table('communities')->where('manga_id', $manga_id)->count();
                 $client = new Client();
