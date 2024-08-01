@@ -3,189 +3,197 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .container-button {
-  position: relative !important;
-  display: inline-block !important;
-  padding: 7px !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  height: -moz-fit-content !important;
-  height: fit-content !important;
+    position: relative !important;
+    display: inline-block !important;
+    padding: 7px !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
 }
-.container-button::after, .container-button::before {
-  position: absolute !important;
-  content: "" !important;
-  width: 100% !important;
-  height: 45% !important;
-  border-radius: 2px !important;
-  box-sizing: border-box !important;
+.container-button::after,
+.container-button::before {
+    position: absolute !important;
+    content: "" !important;
+    width: 100% !important;
+    height: 45% !important;
+    border-radius: 2px !important;
+    box-sizing: border-box !important;
 }
 .container-button::after {
-  top: 0 !important;
-  right: 0 !important;
-  border: 3px solid #7A7A7A !important;
-  border-bottom: none !important;
+    top: 0 !important;
+    right: 0 !important;
+    border: 3px solid #7a7a7a !important;
+    border-bottom: none !important;
 }
 .container-button::before {
-  bottom: 0 !important;
-  right: 0 !important;
-  border: 3px solid #7A7A7A !important;
-  border-top: none !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border: 3px solid #7a7a7a !important;
+    border-top: none !important;
 }
 
-.btn-master, .btn-secondary, .btn-primary {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 15px 92px !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  font-weight: 500 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  position: relative !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+.btn-master,
+.btn-secondary,
+.btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px 92px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .btn-primary {
-  background-color: #C11336 !important;
-  color: white !important;
+    background-color: #c11336 !important;
+    color: white !important;
 }
 .btn-primary:hover {
-  background-color: #323232 !important;
+    background-color: #323232 !important;
 }
 
 .btn-secondary {
-  background-color: #323232 !important;
-  color: white !important;
+    background-color: #323232 !important;
+    color: white !important;
 }
-.btn-secondary.btn-master::after, .btn-secondary::after, .btn-secondary.btn-master::before, .btn-secondary::before {
-  border-color: #323232 !important;
+.btn-secondary.btn-master::after,
+.btn-secondary::after,
+.btn-secondary.btn-master::before,
+.btn-secondary::before {
+    border-color: #323232 !important;
 }
 .btn-secondary:hover {
-  background-color: #C11336 !important;
+    background-color: #c11336 !important;
 }
 
 #navbar {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  margin-top: 20px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    margin-top: 20px;
 }
 #navbar .navbar-brand {
-  display: flex;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 #navbar .navbar-brand img {
-  margin-right: 25px !important;
+    margin-right: 25px !important;
 }
 #navbar .navbar-brand .lines {
-  display: block;
-  flex-grow: 1;
-  height: 1px;
-  background-color: #FFFFFF;
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ffffff;
 }
 #navbar .navbar-brand .navbar_logo {
-  width: 130px;
-  height: auto;
+    width: 130px;
+    height: auto;
 }
 #navbar .nav-item {
-  width: -moz-fit-content;
-  width: fit-content;
-  border-bottom: 2.5px solid transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-bottom: 2.5px solid transparent;
 }
 #navbar .nav-item .navbar-items {
-  padding: 0;
-  color: #7A7A7A;
-  font-size: 16px;
-  font-weight: 500 !important;
+    padding: 0;
+    color: #7a7a7a;
+    font-size: 16px;
+    font-weight: 500 !important;
 }
-#navbar .nav-item:hover, #navbar .nav-item.active {
-  border-bottom: 2.5px solid #C11336;
+#navbar .nav-item:hover,
+#navbar .nav-item.active {
+    border-bottom: 2.5px solid #c11336;
 }
-#navbar .nav-item:hover .navbar-items, #navbar .nav-item.active .navbar-items {
-  color: #C11336;
+#navbar .nav-item:hover .navbar-items,
+#navbar .nav-item.active .navbar-items {
+    color: #c11336;
 }
 #navbar hr {
-  width: 30vw;
-  height: 2px;
-  background-color: #FFFFFF;
+    width: 30vw;
+    height: 2px;
+    background-color: #ffffff;
 }
 #navbar .search-box {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  margin-left: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 16px;
 }
 #navbar .search-box .lines {
-  display: block;
-  flex-grow: 1;
-  height: 1px;
-  background-color: #FFFFFF;
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ffffff;
 }
 #navbar .search-box .profile {
-  width: 55px;
-  height: 55px;
-  border-radius: 100%;
-  border: 2px solid #FFFFFF;
-  margin: 0 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    border: 2px solid #ffffff;
+    margin: 0 25px;
 }
 #navbar .search-box .profile .circle {
-  width: 45px;
-  height: 45px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
 }
 #navbar .search-box .profile.active {
-  border-color: #C11336;
+    border-color: #c11336;
 }
 #navbar .search-box input.form-control {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  font-size: 15;
-  color: #FFFFFF;
-  border: none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 15;
+    color: #ffffff;
+    border: none;
 }
 #navbar .search-box input.form-control::-moz-placeholder {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #navbar .search-box input.form-control::placeholder {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #navbar .search-box input.form-control::-ms-clear {
-  width: 0;
-  height: 0;
-  display: none !important;
+    width: 0;
+    height: 0;
+    display: none !important;
 }
 #navbar .search-box .icon-search {
-  position: absolute;
-  top: 21%;
-  right: 5%;
-  width: 24px;
-  height: 24px;
-  background-image: url("../../images/search.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    position: absolute;
+    top: 21%;
+    right: 5%;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../images/search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #navbar .search-box .result {
   position: absolute;
@@ -231,216 +239,222 @@ body {
 }
 
 #footer {
-  margin: 0;
-  background-image: url("/images/bg-footer.jpg");
-  background-size: cover; /* or contain, depending on your preference */
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-top: 150px;
-  width: 100vw;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  background-color: black;
+    margin: 0;
+    background-image: url("/images/bg-footer.jpg");
+    background-size: cover; /* or contain, depending on your preference */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 150px;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
 }
 
 #footer .footer-content {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #footer .col h6 {
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 20px;
-  line-height: 10px;
-  color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 20px;
+    line-height: 10px;
+    color: #ffffff;
 }
 
 #footer .col h6 span {
-  color: #c11336;
+    color: #c11336;
 }
 
 #footer .logo {
-  height: 75%;
-  width: 100%;
-  margin-bottom: -60px;
+    height: 75%;
+    width: 100%;
+    margin-bottom: -60px;
 }
 
 #footer .logo img {
-  width: auto;
-  height: 100%;
-  margin-left: 38.75vw;
+    width: auto;
+    height: 100%;
+    margin-left: 38.75vw;
 }
 
 #footer .copyright-container {
-  padding-top: 75px;
-  width: 100%;
-  height: 50% !important;
+    padding-top: 75px;
+    width: 100%;
+    height: 50% !important;
 }
 
 #footer .copyright-container h6 {
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 20px;
-  line-height: 10px;
-  color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 20px;
+    line-height: 10px;
+    color: #ffffff;
 }
 
 #footer .copyright-container h6 span {
-  color: #c11336;
+    color: #c11336;
 }
 
 #footer .container {
-  margin-top: 10px !important;
-  /* background-color: red; */
+    margin-top: 10px !important;
+    /* background-color: red; */
 }
 
 #login {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../../images/bg-auth.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: left;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/bg-auth.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 #login .container {
-  width: 40vw;
-  margin: 0 128px;
+    width: 40vw;
+    margin: 0 128px;
 }
 #login .container .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 #login .container .form-group label {
-  margin-bottom: 10px;
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: 500;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
 }
 #login .container .form-group .form-control {
-  width: 100%;
-  padding: 12px 35px;
-  border-radius: 2px;
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF;
-  background-color: transparent;
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
 }
 #login .container .form-group .form-control:nth-child(2) {
-  position: relative;
+    position: relative;
 }
 #login .container h2 {
-  margin-bottom: 35px;
-  font-size: 96px;
-  font-weight: 600;
-  line-height: 100px;
-  color: #FFFFFF;
+    margin-bottom: 35px;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 100px;
+    color: #ffffff;
 }
 #login .container h2 span {
-  color: #C11336;
+    color: #c11336;
 }
 #login .logo {
-  width: 40vw;
+    width: 40vw;
 }
 #login .logo img {
-  width: 50%;
+    width: 50%;
 }
 #login .container-button {
-  width: 100%;
-  height: 40%;
-  margin-top: 20px;
+    width: 100%;
+    height: 40%;
+    margin-top: 20px;
+}
+#login .container-button {
+    width: 100%;
+    height: 40%;
+    margin-top: 20px;
 }
 
 #home {
-  overflow: hidden;
+    overflow: hidden;
 }
 #home #top-manga {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../../images/bg-home.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/bg-home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #home #top-manga .bg-line {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: 0;
-  bottom: -5%;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    bottom: -5%;
 }
 #home #top-manga .bg-line .bg {
-  width: 95vw;
-  height: 85vh;
-  background-image: url("../../images/bg-line.png");
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+    width: 95vw;
+    height: 85vh;
+    background-image: url("../../images/bg-line.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 #home #top-manga .content {
-  z-index: 1;
+    z-index: 1;
 }
 #home #top-manga .content .left-content {
-  height: 100vh;
+    height: 100vh;
 }
 #home #top-manga .content .left-content h4 {
-  color: #FFFFFF;
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 80px;
-  letter-spacing: -5px;
-  margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -5px;
+    margin-bottom: 5px;
 }
 #home #top-manga .content .left-content .title {
-  width: 40vw;
-  height: 23%;
-  margin-left: -10%;
-  background-image: url("../../images/bg-paint.png");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 25px;
+    width: 40vw;
+    height: 23%;
+    margin-left: -10%;
+    background-image: url("../../images/bg-paint.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 25px;
 }
 #home #top-manga .content .left-content .title h3 {
-  display: block;
-  padding-left: 4%;
-  color: #C11336;
-  font-size: 80px;
-  font-weight: 700;
-  letter-spacing: -5px;
+    display: block;
+    padding-left: 4%;
+    color: #c11336;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -5px;
 }
 #home #top-manga .content .left-content p {
-  max-width: 80%;
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 18px;
+    max-width: 80%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 18px;
 }
 #home #top-manga .content .left-content .btn-secondary {
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  padding: 6px 30px;
-  color: black;
-  background-color: #FFFFFF;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    padding: 6px 30px;
+    color: black;
+    background-color: #ffffff;
 }
-#home #top-manga .content .left-content .btn-secondary::after, #home #top-manga .content .left-content .btn-secondary::before {
-  border-color: white;
+#home #top-manga .content .left-content .btn-secondary::after,
+#home #top-manga .content .left-content .btn-secondary::before {
+    border-color: white;
 }
 #home #top-manga .content .left-content .btn-secondary:hover {
-  background-color: #7A7A7A;
+    background-color: #7a7a7a;
 }
 #home #top-manga .content .right-content {
-  height: 100vh;
+    height: 100vh;
 }
 #home #top-manga .content .right-content .img-manga {
-  width: 100%;
-  height: 100%;
-  background-image: url("../../images/gachi.png");
-  background-size: contain;
-  background-position: bottom;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/gachi.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 #home #history {
   width: 100%;
@@ -449,952 +463,1590 @@ body {
   background-size: cover;
 }
 #home #history h4.title {
-  font-weight: 600;
-  color: #FFFFFF;
-  font-size: 48px;
-  line-height: 70px;
-  letter-spacing: -0.5px;
-  text-align: right;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: -0.5px;
+    text-align: right;
 }
 #home #history .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
 }
 #home #history .history-content {
-  height: 21vw;
+    height: 21vw;
 }
 #home #history .history-content .details {
-  max-height: 100%;
-  margin-right: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
+    max-height: 100%;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
 }
 #home #history .history-content .details h5 {
-  width: 500px;
-  color: #FFFFFF;
-  font-size: 64px;
-  font-weight: 800;
-  text-align: right;
-  line-height: 60px;
-  word-spacing: -0.5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
+    width: 500px;
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 800;
+    text-align: right;
+    line-height: 60px;
+    word-spacing: -0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
 }
 #home #history .history-content .details p {
-  max-width: 32vw;
-  text-align: right;
-  color: #7A7A7A;
-  font-size: 20px;
-  font-weight: 300;
+    max-width: 32vw;
+    text-align: right;
+    color: #7a7a7a;
+    font-size: 20px;
+    font-weight: 300;
 }
 #home #history .history-content .details p:nth-child(1) {
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 5px;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 5px;
 }
 #home #history .history-content .details p:nth-child(2) {
-  word-spacing: -0.5px;
+    word-spacing: -0.5px;
 }
 #home #history .history-content .cover-manga-active {
-  width: 200px;
-  height: 320px;
-  background-image: url("../../images/chainsaw-cover.png");
-  background-size: cover;
-  background-position: center;
+    width: 200px;
+    height: 320px;
+    background-image: url("../../images/chainsaw-cover.png");
+    background-size: cover;
+    background-position: center;
 }
 #home #history .group-btn {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 #home #history .group-btn .container-button {
-  width: 200px;
-  margin-left: 20px;
+    width: 200px;
+    margin-left: 20px;
 }
 #home #history .group-btn .container-button .btn {
-  padding: 10px;
+    padding: 10px;
 }
 #home #history .history-second {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 #home #history .history-second .cover-manga {
-  margin-left: 25px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
+    margin-left: 25px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
 }
 #home #history .history-second .cover-manga:nth-child(1) {
-  background-image: url("../../images/gachi-book.jpg");
+    background-image: url("../../images/gachi-book.jpg");
 }
 #home #history .history-second .cover-manga:nth-child(2) {
-  background-image: url("../../images/sakamoto-book.jpg");
+    background-image: url("../../images/sakamoto-book.jpg");
 }
 #home #history .history-second .cover-manga:nth-child(3) {
-  background-image: url("../../images/jujutsu-book.jpg");
+    background-image: url("../../images/jujutsu-book.jpg");
 }
 #home #history .history-second .indicator {
-  margin-top: 20px;
-  height: -moz-fit-content;
-  height: fit-content;
+    margin-top: 20px;
+    height: -moz-fit-content;
+    height: fit-content;
 }
 #home #history .history-second .indicator .container-button .btn {
-  padding: 15px !important;
-  background-color: #7A7A7A;
+    padding: 15px !important;
+    background-color: #7a7a7a;
 }
 #home #history .history-second .indicator .container-button .btn img {
-  width: 10px;
-  height: 10px;
+    width: 10px;
+    height: 10px;
 }
 #home #history .history-second .indicator .container-button:nth-child(1) {
-  margin-right: 20px;
-  transform: rotate(180deg);
+    margin-right: 20px;
+    transform: rotate(180deg);
 }
 #home #history .history-second .indicator .lines {
-  width: 56.7%;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-bottom: 0;
-  background-color: #7A7A7A;
+    width: 56.7%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0;
+    background-color: #7a7a7a;
 }
 #home #history .history-second .indicator h5 {
-  color: #7A7A7A;
-  font-size: 24px;
+    color: #7a7a7a;
+    font-size: 24px;
 }
 #home #new-update {
-  width: 100%;
+    width: 100%;
 }
 #home #new-update .container {
-  margin-top: 74px;
+    margin-top: 74px;
 }
 #home #new-update .container h5 {
-  font-size: 40px;
-  font-weight: 800;
+    font-size: 40px;
+    font-weight: 800;
 }
 #home #new-update .container .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: black;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
 }
 #home #new-update .container .manga-card {
-  width: 20vw;
-  margin-bottom: 70px;
+    width: 20vw;
+    margin-bottom: 70px;
 }
 #home #new-update .container .manga-card .img {
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #home #new-update .container .manga-card .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 #home #new-update .container .manga-card .chp-title {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 2;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 
 .base-detail {
-  background-color: black;
+    background-color: black;
 }
 
 #detail {
-  width: 100%;
-  background-image: url("../../images/bg-detail.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-top: 250px;
+    width: 100%;
+    background-image: url("../../images/bg-detail.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 250px;
 }
 #detail .slug {
-  font-size: 25px;
-  color: #FFFFFF;
-  font-weight: 400;
-  margin-bottom: 30px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 #detail .slug span {
-  color: #C11336;
-  font-weight: 400;
+    color: #c11336;
+    font-weight: 400;
 }
 #detail .top-content {
-  width: 100%;
-  height: 70vh;
+    width: 100%;
+    height: 70vh;
 }
 #detail .top-content .manga-cover {
-  width: 282px;
-  height: 400px;
-  margin-right: 40px;
+    width: 282px;
+    height: 400px;
+    margin-right: 40px;
 }
 #detail .top-content .manga-detail {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #detail .top-content .manga-detail .author {
-  font-size: 20px;
-  font-weight: 300;
+    font-size: 20px;
+    font-weight: 300;
 }
 #detail .top-content .manga-detail .title {
-  color: #C11336; /* Make sure $red is defined in your CSS or SCSS */
-  font-size: 96px;
-  font-weight: 800;
-  line-height: 100px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Limits the number of lines */
-  text-overflow: ellipsis; /* Ensures that the overflow is handled with ellipsis */
+    color: #c11336; /* Make sure $red is defined in your CSS or SCSS */
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 100px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limits the number of lines */
+    text-overflow: ellipsis; /* Ensures that the overflow is handled with ellipsis */
 }
 #detail .top-content .manga-detail .synopsis {
-  width: 45vw;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: -5%;
+    width: 45vw;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -5%;
 }
 #detail .top-content .manga-detail .genres {
-  font-size: 14px;
-  font-weight: 600;
+    font-size: 14px;
+    font-weight: 600;
 }
 #detail .top-content .manga-detail .genres span {
-  color: #C11336;
+    color: #c11336;
 }
 #detail .top-content .btn-group {
-  margin-bottom: 7.5%;
-  width: 30vw !important;
+    margin-bottom: 7.5%;
+    width: 30vw !important;
 }
-#detail .top-content .btn-group .btn-master, #detail .top-content .btn-group .btn-primary, #detail .top-content .btn-group .btn-secondary {
-  padding: 11px 45px !important;
+#detail .top-content .btn-group .btn-master,
+#detail .top-content .btn-group .btn-primary,
+#detail .top-content .btn-group .btn-secondary {
+    padding: 11px 45px !important;
 }
 #detail .top-content .btn-group .btn-secondary {
-  width: 100% !important;
+    width: 100% !important;
 }
 #detail .top-content .btn-group .container-button {
-  width: 100% !important;
+    width: 100% !important;
 }
 #detail .chapter-list h5 {
-  color: #FFFFFF;
-  font-weight: 800;
-  text-align: left;
-  line-height: 60px;
-  word-spacing: -0.5px;
-  font-size: 40px;
-  font-weight: 800;
-  margin-bottom: 40px;
+    color: #ffffff;
+    font-weight: 800;
+    text-align: left;
+    line-height: 60px;
+    word-spacing: -0.5px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 40px;
 }
 #detail .chapter-list .chapter-item {
-  text-decoration: none;
-  width: 100%;
-  padding-bottom: 30px;
-  margin-bottom: 45px;
-  border-bottom: 1px solid #FFFFFF;
-  color: #FFFFFF;
-  font-weight: 500;
-  font-size: 20px;
+    text-decoration: none;
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
 }
 #detail .chapter-list .chapter-item .chapter-cover {
-  width: 160px;
-  height: 160px;
-  background-color: gray;
+    width: 160px;
+    height: 160px;
+    background-color: gray;
 }
 #detail .chapter-list .chapter-item .chapter-title {
-  font-size: 24px;
-  margin-left: 40px;
-  width: 400px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: block;
+    font-size: 24px;
+    margin-left: 40px;
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
 }
 #detail .chapter-list .chapter-item .chapter-views .eye-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-  background-image: url("../../images/eye.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-image: url("../../images/eye.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #detail .chapter-list .chapter-item span {
-  font-weight: 300;
+    font-weight: 300;
 }
 #detail .chapter-list .chapter-item:hover {
-  color: #C11336;
+    color: #c11336;
 }
 #detail .chapter-list .chapter-item:hover .eye-icon {
-  background-image: url("../../images/eye-red.png");
+    background-image: url("../../images/eye-red.png");
 }
 #detail #simillar-manga {
-  width: 100%;
-  background-color: #FFFFFF;
-  padding-top: 30px;
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 30px;
 }
 #detail #simillar-manga .container {
-  margin-top: 74px;
+    margin-top: 74px;
 }
 #detail #simillar-manga .container h5 {
-  font-size: 40px;
-  font-weight: 800;
+    font-size: 40px;
+    font-weight: 800;
 }
 #detail #simillar-manga .container .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: black;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
 }
 #detail #simillar-manga .container .manga-card {
-  width: 20vw;
-  text-decoration: none;
-  color: black;
-  margin-bottom: 70px;
+    width: 20vw;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 70px;
 }
 #detail #simillar-manga .container .manga-card .img {
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: all linear 1s;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all linear 1s;
 }
 #detail #simillar-manga .container .manga-card .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 #detail #simillar-manga .container .manga-card .chp-title {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 2;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 #detail #simillar-manga .container .manga-card:hover .img {
-  background-size: 150%;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #read-manga {
-  width: 100%;
-  background-image: url("../../images/bg-cover.png");
+    width: 100%;
+    background-image: url("../../images/bg-cover.png");
 }
 #read-manga .bg-dark-group {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  padding-top: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding-top: 20%;
 }
 #read-manga .bg-dark-group .bg-dark-item {
-  width: 100%;
-  height: 150vh;
-  background-image: url("../../images/bg-dark.png");
-  background-size: contain;
-  margin-bottom: 120vh;
+    width: 100%;
+    height: 150vh;
+    background-image: url("../../images/bg-dark.png");
+    background-size: contain;
+    margin-bottom: 120vh;
 }
 #read-manga .container {
-  position: relative;
-  z-index: 2;
-  padding-top: 15%;
+    position: relative;
+    z-index: 2;
+    padding-top: 15%;
 }
 #read-manga .container .slug {
-  font-size: 25px;
-  color: #FFFFFF;
-  font-weight: 400;
-  margin-bottom: 30px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 #read-manga .container .slug span {
-  color: #C11336;
-  font-weight: 400;
+    color: #c11336;
+    font-weight: 400;
 }
 #read-manga .container .top-content {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 #read-manga .container .top-content h5.chapter-number {
-  font-size: 80px;
-  font-weight: 800;
-  line-height: 100px;
-  letter-spacing: -2%;
-  color: #FFFFFF;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 100px;
+    letter-spacing: -2%;
+    color: #ffffff;
 }
 #read-manga .container .top-content h5.chapter-number span {
-  color: #C11336;
+    color: #c11336;
 }
 #read-manga .container .top-content h5.chapter-title {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 80px;
-  letter-spacing: -2%;
-  color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: -2%;
+    color: #ffffff;
 }
 #read-manga .container .top-content h5.chapter-title span {
-  color: #C11336;
+    color: #c11336;
 }
 #read-manga .container .top-content .btn-group {
-  width: 35vw;
+    width: 35vw;
 }
 #read-manga .container .top-content .btn-group .container-button {
-  width: 48% !important;
-  margin-left: 20px !important;
+    width: 48% !important;
+    margin-left: 20px !important;
 }
-#read-manga .container .top-content .btn-group .container-button .btn-master, #read-manga .container .top-content .btn-group .container-button .btn-primary, #read-manga .container .top-content .btn-group .container-button .btn-secondary {
-  padding: 11px 45px !important;
+#read-manga .container .top-content .btn-group .container-button .btn-master,
+#read-manga .container .top-content .btn-group .container-button .btn-primary,
+#read-manga
+    .container
+    .top-content
+    .btn-group
+    .container-button
+    .btn-secondary {
+    padding: 11px 45px !important;
 }
 #read-manga .container .manga-panel {
-  width: 100%;
+    width: 100%;
 }
 #read-manga .container .manga-panel img {
-  width: 100%;
+    width: 100%;
 }
 #read-manga .container .manga-panel .manga-item {
-  width: 100%;
-  height: 250vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 250vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #read-manga .manga-bottom {
-  width: 100%;
-  background-image: url("../../images/bg-bottom-manga.png");
-  background-size: cover;
-  padding-bottom: 20%;
+    width: 100%;
+    background-image: url("../../images/bg-bottom-manga.png");
+    background-size: cover;
+    padding-bottom: 20%;
 }
 #read-manga .manga-bottom .btn-group {
-  margin-bottom: 50px !important;
+    margin-bottom: 50px !important;
 }
 #read-manga .manga-bottom .manga-detail {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #read-manga .manga-bottom .manga-detail .manga-cover {
-  width: 282px;
-  height: 400px;
-  margin-right: 40px;
+    width: 282px;
+    height: 400px;
+    margin-right: 40px;
 }
 #read-manga .manga-bottom .manga-detail .author {
-  font-size: 20px;
-  font-weight: 300;
+    font-size: 20px;
+    font-weight: 300;
 }
 #read-manga .manga-bottom .manga-detail .manga-title {
-  font-size: 58px;
-  font-weight: 800;
-  line-height: 100px;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 100px;
 }
 #read-manga .manga-bottom .manga-detail .manga-title span {
-  color: #C11336;
+    color: #c11336;
 }
 #read-manga .manga-bottom .manga-detail .synopsis {
-  width: 45vw;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: -5%;
+    width: 45vw;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -5%;
 }
 #read-manga .manga-bottom .manga-detail .chapter-groups {
-  width: 150%;
+    width: 150%;
 }
 #read-manga .manga-bottom .manga-detail .chapter-groups .container-button {
-  width: 20% !important;
-  margin-right: 25px !important;
+    width: 20% !important;
+    margin-right: 25px !important;
 }
-#read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-master, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-primary, #read-manga .manga-bottom .manga-detail .chapter-groups .container-button .btn-secondary {
-  padding: 11px 20px !important;
-  background-color: transparent !important;
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-master,
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-primary,
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-secondary {
+    padding: 11px 20px !important;
+    background-color: transparent !important;
 }
-#read-manga .manga-bottom .manga-detail .chapter-groups .container-button:hover a {
-  color: #C11336 !important;
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button:hover
+    a {
+    color: #c11336 !important;
 }
-#read-manga .manga-bottom .manga-detail .chapter-groups .container-button a.active {
-  color: #C11336 !important;
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    a.active {
+    color: #c11336 !important;
 }
 
 #manga {
-  width: 100vw;
+    width: 100vw;
 }
 #manga #top-manga {
-  width: 100vw;
-  height: 120vh;
-  background-image: url("../../images/bg-manga.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+    width: 100vw;
+    height: 120vh;
+    background-image: url("../../images/bg-manga.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #manga #top-manga .bg-line {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
 }
 #manga #top-manga .bg-line .bg {
-  width: 95vw;
-  height: 90vh;
-  background-image: url("../../images/bg-line-manga.png");
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+    width: 95vw;
+    height: 90vh;
+    background-image: url("../../images/bg-line-manga.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 #manga #top-manga .container {
-  width: 100%;
-  padding-top: 100px;
-  color: #FFFFFF;
+    width: 100%;
+    padding-top: 100px;
+    color: #ffffff;
 }
 #manga #top-manga .container h5 {
-  font-size: 40px;
-  font-weight: 800;
+    font-size: 40px;
+    font-weight: 800;
 }
 #manga #top-manga .container .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
 }
 #manga #top-manga .container .manga-card {
-  width: 20vw;
-  margin-bottom: 70px;
+    width: 20vw;
+    margin-bottom: 70px;
 }
 #manga #top-manga .container .manga-card .img {
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #manga #top-manga .container .manga-card .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 #manga #top-manga .container .manga-card .chp-title {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 2;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 #manga #new-update .container {
-  width: 100%;
-  padding-top: 74px;
+    width: 100%;
+    padding-top: 74px;
 }
 #manga #new-update .container h5 {
-  font-size: 40px;
-  font-weight: 800;
+    font-size: 40px;
+    font-weight: 800;
 }
 #manga #new-update .container .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: black;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
 }
 #manga #new-update .container .manga-card {
-  width: 20vw;
-  margin-bottom: 70px;
+    width: 20vw;
+    margin-bottom: 70px;
 }
 #manga #new-update .container .manga-card .img {
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #manga #new-update .container .manga-card .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 #manga #new-update .container .manga-card .chp-title {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 2;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 
 #profile {
-  width: 100%;
+    width: 100%;
 }
 #profile .profile-information {
-  padding-top: 10%;
-  width: 100%;
-  height: 130vh;
-  background-image: url("../../images/bg-profile.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    padding-top: 10%;
+    width: 100%;
+    height: 130vh;
+    background-image: url("../../images/bg-profile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #profile .profile-information h5 {
-  color: #FFFFFF;
-  font-size: 60px;
-  font-weight: 700;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
 }
 #profile .profile-information .photo-profile {
-  width: 15vw;
-  height: 15vw;
-  border-radius: 100%;
-  border: 3px solid #FFFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 100%;
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #profile .profile-information .photo-profile .inner-img {
-  width: 13.5vw;
-  height: 13.5vw;
-  border-radius: 100%;
-  background-color: #FFFFFF;
+    width: 13.5vw;
+    height: 13.5vw;
+    border-radius: 100%;
+    background-color: #ffffff;
 }
 #profile .profile-information .form-section {
-  margin-left: 100px;
+    margin-left: 100px;
 }
 #profile .profile-information .form-section .form-group {
-  display: flex !important;
-  margin-bottom: 30px;
+    display: flex !important;
+    margin-bottom: 30px;
 }
 #profile .profile-information .form-section .form-group label {
-  width: 250px;
-  margin-right: 20px;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 24px;
+    width: 250px;
+    margin-right: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
 }
 #profile .profile-information .form-section .form-group .form-control {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #FFFFFF;
-  border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    border-radius: 0;
 }
-#profile .profile-information .form-section .form-group .form-control:focus, #profile .profile-information .form-section .form-group .form-control:active {
-  border: none !important;
-  border-bottom: 2px solid #FFFFFF;
+#profile .profile-information .form-section .form-group .form-control:focus,
+#profile .profile-information .form-section .form-group .form-control:active {
+    border: none !important;
+    border-bottom: 2px solid #ffffff;
 }
 #profile #new-update {
-  width: 100%;
+    width: 100%;
 }
 #profile #new-update .container {
-  margin-top: -25%;
+    margin-top: -25%;
 }
 #profile #new-update .container h5 {
-  font-size: 40px;
-  font-weight: 800;
-  color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
 }
 #profile #new-update .container .lines {
-  width: 45%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  margin-bottom: 40px;
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
 }
 #profile #new-update .container .manga-card {
-  width: 20vw;
-  margin-bottom: 70px;
+    width: 20vw;
+    margin-bottom: 70px;
 }
 #profile #new-update .container .manga-card .img {
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #profile #new-update .container .manga-card .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 1;
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 #profile #new-update .container .manga-card .chp-title {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-lines: 2;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 
 #community {
-  width: 100%;
-  height: 130vh;
-  background-image: url("../../images/bg-cover.png");
+    width: 100%;
+    height: 130vh;
+    background-image: url("../../images/bg-cover.png");
 }
 #community .layer1 {
-  width: 65vw;
-  height: 130vh;
-  background-color: black;
+    width: 65vw;
+    height: 130vh;
+    background-color: black;
 }
 #community .layer1 .container {
-  height: 130vh;
-  padding: 13% 5%;
-  position: relative;
+    height: 130vh;
+    padding: 13% 5%;
+    position: relative;
 }
 #community .layer1 .container .container-button {
-  width: 500px !important;
-  height: 7vh !important;
-  margin-bottom: 70px;
+    width: 500px !important;
+    height: 7vh !important;
+    margin-bottom: 70px;
 }
 #community .layer1 .container .container-button input.form-control {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  font-size: 15;
-  color: #FFFFFF;
-  border: none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 15;
+    color: #ffffff;
+    border: none;
 }
-#community .layer1 .container .container-button input.form-control::-moz-placeholder {
-  color: #FFFFFF;
+#community
+    .layer1
+    .container
+    .container-button
+    input.form-control::-moz-placeholder {
+    color: #ffffff;
 }
-#community .layer1 .container .container-button input.form-control::placeholder {
-  color: #FFFFFF;
+#community
+    .layer1
+    .container
+    .container-button
+    input.form-control::placeholder {
+    color: #ffffff;
 }
 #community .layer1 .container .container-button input.form-control::-ms-clear {
-  width: 0;
-  height: 0;
-  display: none !important;
+    width: 0;
+    height: 0;
+    display: none !important;
 }
 #community .layer1 .container .container-button .icon-search {
-  position: absolute;
-  top: 21%;
-  right: 5%;
-  width: 24px;
-  height: 24px;
-  background-image: url("../../images/search.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    position: absolute;
+    top: 21%;
+    right: 5%;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../images/search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #community .layer1 .container .manga-list {
-  height: 90vh;
-  overflow-y: scroll;
+    height: 90vh;
+    overflow-y: scroll;
 }
 #community .layer1 .container .manga-list::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 #community .layer1 .container .manga-list .manga-com {
-  padding-left: 70px;
-  margin-bottom: 32px;
+    padding-left: 70px;
+    margin-bottom: 32px;
 }
 #community .layer1 .container .manga-list .manga-com .lines {
-  width: 70%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #FFFFFF;
+    width: 70%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
 }
 #community .layer1 .container .manga-list .manga-com .manga-content {
-  margin-top: 17px;
-  padding: 17px;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s ease-in-out;
+    margin-top: 17px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
 }
 #community .layer1 .container .manga-list .manga-com .manga-content img {
-  width: 200px;
-  height: 285px;
-  margin-right: 28px;
+    width: 200px;
+    height: 285px;
+    margin-right: 28px;
 }
 #community .layer1 .container .manga-list .manga-com .manga-content .text {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #community .layer1 .container .manga-list .manga-com .manga-content .text h5 {
-  font-size: 35px;
-  font-weight: 600;
-  letter-spacing: 2%;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 2%;
 }
 #community .layer1 .container .manga-list .manga-com .manga-content .text p {
-  font-size: 24px;
+    font-size: 24px;
 }
 #community .layer1 .container .manga-list .manga-com:hover .manga-content {
-  background-color: #C11336;
+    background-color: #c11336;
 }
 
 #room-lists {
-  width: 100%;
-  height: 130vh;
-  background-image: url("../../images/bg-cover.png");
+    width: 100%;
+    height: 130vh;
+    background-image: url("../../images/bg-cover.png");
 }
 #room-lists .container {
-  height: 130vh;
-  overflow-y: scroll;
+    height: 130vh;
+    overflow-y: scroll;
 }
 #room-lists .container::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 #room-lists .container .room-card .container-button {
-  margin-top: 14px;
+    margin-top: 14px;
 }
 #room-lists .container .room-card .container-button img {
-  width: 635px;
-  height: 338px;
-  padding: 5px;
+    width: 635px;
+    height: 338px;
+    padding: 5px;
 }
-#room-lists .container .room-card .container-button::after, #room-lists .container .room-card .container-button::before {
-  border-color: #FFFFFF !important;
+#room-lists .container .room-card .container-button::after,
+#room-lists .container .room-card .container-button::before {
+    border-color: #ffffff !important;
 }
 #room-lists .container .room-card .left {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #room-lists .container .room-card .left h5 {
-  font-size: 48px;
-  font-weight: 500;
+    font-size: 48px;
+    font-weight: 500;
 }
 #room-lists .container .room-card .left .details-room span {
-  font-size: 24px;
+    font-size: 24px;
 }
 #room-lists .container .room-card .left .details-room span:nth-child(2) {
-  color: #7A7A7A;
+    color: #7a7a7a;
 }
 #room-lists .container .lines {
-  margin-top: 80px;
-  margin-bottom: 40px;
-  width: 100%;
-  height: 2px;
-  background-color: #7A7A7A;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 2px;
+    background-color: #7a7a7a;
+}
+#home #history {
+    width: 100%;
+    height: 140vh;
+    background-image: url("../../images/bg-history.png");
+    background-size: cover;
+}
+#home #history h4.title {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: -0.5px;
+    text-align: right;
+}
+#home #history .lines {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+}
+#home #history .history-content {
+    height: 21vw;
+}
+#home #history .history-content .details {
+    max-height: 100%;
+    margin-right: 25px;
+}
+#home #history .history-content .details h5 {
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 800;
+    text-align: right;
+    line-height: 60px;
+    word-spacing: -0.5px;
+}
+#home #history .history-content .details p {
+    max-width: 32vw;
+    text-align: right;
+    color: #7a7a7a;
+    font-size: 20px;
+    font-weight: 300;
+}
+#home #history .history-content .details p:nth-child(1) {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 5px;
+}
+#home #history .history-content .details p:nth-child(2) {
+    word-spacing: -0.5px;
+}
+#home #history .history-content .cover-manga-active {
+    width: 200px;
+    height: 320px;
+    background-image: url("../../images/chainsaw-cover.png");
+    background-size: cover;
+    background-position: center;
+}
+#home #history .group-btn {
+    margin-top: 40px;
+}
+#home #history .group-btn .container-button {
+    width: 200px;
+    margin-left: 20px;
+}
+#home #history .group-btn .container-button .btn {
+    padding: 10px;
+}
+#home #history .history-second {
+    margin-top: 50px;
+}
+#home #history .history-second .cover-manga {
+    margin-left: 25px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+#home #history .history-second .cover-manga:nth-child(1) {
+    background-image: url("../../images/gachi-book.jpg");
+}
+#home #history .history-second .cover-manga:nth-child(2) {
+    background-image: url("../../images/sakamoto-book.jpg");
+}
+#home #history .history-second .cover-manga:nth-child(3) {
+    background-image: url("../../images/jujutsu-book.jpg");
+}
+#home #history .history-second .indicator {
+    margin-top: 20px;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+#home #history .history-second .indicator .container-button .btn {
+    padding: 10px;
+    background-color: #7a7a7a;
+}
+#home #history .history-second .indicator .container-button .btn img {
+    width: 10px;
+    height: 10px;
+}
+#home #history .history-second .indicator .container-button:nth-child(1) {
+    margin-right: 20px;
+    transform: rotate(180deg);
+}
+#home #history .history-second .indicator .lines {
+    width: 58.7%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0;
+    background-color: #7a7a7a;
+}
+#home #history .history-second .indicator h5 {
+    color: #7a7a7a;
+    font-size: 24px;
+}
+#home #new-update {
+    width: 100%;
+}
+#home #new-update .container {
+    margin-top: 74px;
+}
+#home #new-update .container h5 {
+    font-size: 40px;
+    font-weight: 800;
+}
+#home #new-update .container .lines {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+#home #new-update .container .manga-card {
+    width: 20vw;
+    margin-bottom: 70px;
+}
+#home #new-update .container .manga-card .img {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#home #new-update .container .manga-card .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+#home #new-update .container .manga-card .chp-title {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
+}
+
+.base-detail {
+    background-color: black;
+}
+
+#detail {
+    width: 100%;
+    background-image: url("../../images/bg-detail.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 250px;
+}
+#detail .slug {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+#detail .slug span {
+    color: #c11336;
+    font-weight: 400;
+}
+#detail .top-content {
+    width: 100%;
+    height: 70vh;
+}
+#detail .top-content .manga-cover {
+    width: 282px;
+    height: 400px;
+    margin-right: 40px;
+}
+#detail .top-content .manga-detail {
+    color: #ffffff;
+}
+#detail .top-content .manga-detail .author {
+    font-size: 20px;
+    font-weight: 300;
+}
+#detail .top-content .manga-detail .title {
+    color: #c11336;
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 100px;
+}
+#detail .top-content .manga-detail .synopsis {
+    width: 45vw;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -5%;
+}
+#detail .top-content .manga-detail .genres {
+    font-size: 14px;
+    font-weight: 600;
+}
+#detail .top-content .manga-detail .genres span {
+    color: #c11336;
+}
+#detail .top-content .btn-group {
+    margin-bottom: 7.5%;
+}
+#detail .top-content .btn-group .btn-master,
+#detail .top-content .btn-group .btn-primary,
+#detail .top-content .btn-group .btn-secondary {
+    padding: 11px 45px;
+}
+#detail .top-content .btn-group .container-button {
+    width: 100%;
+}
+#detail .chapter-list h5 {
+    color: #ffffff;
+    font-weight: 800;
+    text-align: left;
+    line-height: 60px;
+    word-spacing: -0.5px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+#detail .chapter-list .chapter-item {
+    text-decoration: none;
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+}
+#detail .chapter-list .chapter-item .chapter-cover {
+    width: 160px;
+    height: 160px;
+    background-color: gray;
+}
+#detail .chapter-list .chapter-item .chapter-title {
+    font-size: 24px;
+    margin-left: 40px;
+}
+#detail .chapter-list .chapter-item .chapter-views .eye-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-image: url("../../images/eye.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#detail .chapter-list .chapter-item span {
+    font-weight: 300;
+}
+#detail .chapter-list .chapter-item:hover {
+    color: #c11336;
+}
+#detail .chapter-list .chapter-item:hover .eye-icon {
+    background-image: url("../../images/eye-red.png");
+}
+#detail #simillar-manga {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 30px;
+}
+#detail #simillar-manga .container {
+    margin-top: 74px;
+}
+#detail #simillar-manga .container h5 {
+    font-size: 40px;
+    font-weight: 800;
+}
+#detail #simillar-manga .container .lines {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+#detail #simillar-manga .container .manga-card {
+    width: 20vw;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 70px;
+}
+#detail #simillar-manga .container .manga-card .img {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all linear 1s;
+}
+#detail #simillar-manga .container .manga-card .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+#detail #simillar-manga .container .manga-card .chp-title {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
+}
+#detail #simillar-manga .container .manga-card:hover .img {
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#read-manga {
+    width: 100%;
+    background-image: url("../../images/bg-cover.png");
+}
+#read-manga .bg-dark-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding-top: 20%;
+}
+#read-manga .bg-dark-group .bg-dark-item {
+    width: 100%;
+    height: 150vh;
+    background-image: url("../../images/bg-dark.png");
+    background-size: contain;
+    margin-bottom: 120vh;
+}
+#read-manga .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 15%;
+}
+#read-manga .container .slug {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+#read-manga .container .slug span {
+    color: #c11336;
+    font-weight: 400;
+}
+#read-manga .container .top-content {
+    margin-bottom: 80px;
+}
+#read-manga .container .top-content h5.chapter-number {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 100px;
+    letter-spacing: -2%;
+    color: #ffffff;
+}
+#read-manga .container .top-content h5.chapter-number span {
+    color: #c11336;
+}
+#read-manga .container .top-content h5.chapter-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: -2%;
+    color: #ffffff;
+}
+#read-manga .container .top-content h5.chapter-title span {
+    color: #c11336;
+}
+#read-manga .container .top-content .btn-group {
+    width: 35vw;
+}
+#read-manga .container .top-content .btn-group .container-button {
+    width: 48%;
+}
+#read-manga .container .top-content .btn-group .container-button .btn-master,
+#read-manga .container .top-content .btn-group .container-button .btn-primary,
+#read-manga
+    .container
+    .top-content
+    .btn-group
+    .container-button
+    .btn-secondary {
+    padding: 11px 45px;
+}
+#read-manga .container .manga-panel {
+    width: 100%;
+}
+#read-manga .container .manga-panel img {
+    width: 100%;
+}
+#read-manga .container .manga-panel .manga-item {
+    width: 100%;
+    height: 250vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#read-manga .manga-bottom {
+    width: 100%;
+    background-image: url("../../images/bg-bottom-manga.png");
+    background-size: cover;
+    padding-bottom: 20%;
+}
+#read-manga .manga-bottom .btn-group {
+    margin-bottom: 50px;
+}
+#read-manga .manga-bottom .manga-detail {
+    color: #ffffff;
+}
+#read-manga .manga-bottom .manga-detail .manga-cover {
+    width: 282px;
+    height: 400px;
+    margin-right: 40px;
+}
+#read-manga .manga-bottom .manga-detail .author {
+    font-size: 20px;
+    font-weight: 300;
+}
+#read-manga .manga-bottom .manga-detail .manga-title {
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 100px;
+}
+#read-manga .manga-bottom .manga-detail .manga-title span {
+    color: #c11336;
+}
+#read-manga .manga-bottom .manga-detail .synopsis {
+    width: 45vw;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -5%;
+}
+#read-manga .manga-bottom .manga-detail .chapter-groups {
+    width: 150%;
+}
+#read-manga .manga-bottom .manga-detail .chapter-groups .container-button {
+    width: 20%;
+    margin-right: 25px;
+}
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-master,
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-primary,
+#read-manga
+    .manga-bottom
+    .manga-detail
+    .chapter-groups
+    .container-button
+    .btn-secondary {
+    padding: 11px 20px;
+    background-color: transparent;
+}
+
+#manga {
+    width: 100vw;
+    height: 110vh;
+    background-image: url("../../images/bg-manga.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#manga #top-manga .bg-line {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+#manga #top-manga .bg-line .bg {
+    width: 95vw;
+    height: 90vh;
+    background-image: url("../../images/bg-line-manga.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+#manga #top-manga .container {
+    width: 100%;
+    padding-top: 74px;
+    color: #ffffff;
+}
+#manga #top-manga .container h5 {
+    font-size: 40px;
+    font-weight: 800;
+}
+#manga #top-manga .container .lines {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+}
+#manga #top-manga .container .manga-card {
+    width: 20vw;
+    margin-bottom: 70px;
+}
+#manga #top-manga .container .manga-card .img {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#manga #top-manga .container .manga-card .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+#manga #top-manga .container .manga-card .chp-title {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
+}
+#manga #new-update .container {
+    width: 100%;
+    padding-top: 74px;
+}
+#manga #new-update .container h5 {
+    font-size: 40px;
+    font-weight: 800;
+}
+#manga #new-update .container .lines {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+#manga #new-update .container .manga-card {
+    width: 20vw;
+    margin-bottom: 70px;
+}
+#manga #new-update .container .manga-card .img {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#manga #new-update .container .manga-card .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+#manga #new-update .container .manga-card .chp-title {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 
 #detail-room {
-  width: 100%;
-  background-image: url("../../images/bg-cover.png");
-  padding-top: 120px;
+    width: 100%;
+    background-image: url("../../images/bg-cover.png");
+    padding-top: 120px;
 }
 #detail-room .main-content {
-  height: 110vh;
-  overflow-y: scroll;
+    height: 110vh;
+    overflow-y: scroll;
 }
 #detail-room .main-content::-webkit-scrollbar {
-  background-color: transparent;
+    background-color: transparent;
 }
 #detail-room .main-content .room-card {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 #detail-room .main-content .room-card .container-button {
-  margin-top: 14px;
+    margin-top: 14px;
 }
 #detail-room .main-content .room-card .container-button img {
-  width: 635px;
-  height: 338px;
-  padding: 5px;
+    width: 635px;
+    height: 338px;
+    padding: 5px;
 }
-#detail-room .main-content .room-card .container-button::after, #detail-room .main-content .room-card .container-button::before {
-  border-color: #FFFFFF !important;
+#detail-room .main-content .room-card .container-button::after,
+#detail-room .main-content .room-card .container-button::before {
+    border-color: #ffffff !important;
 }
 #detail-room .main-content .room-card .left {
-  color: #FFFFFF;
+    color: #ffffff;
 }
 #detail-room .main-content .room-card .left h5 {
-  font-size: 48px;
-  font-weight: 500;
+    font-size: 48px;
+    font-weight: 500;
 }
 #detail-room .main-content .room-card .left .details-room span {
-  font-size: 24px;
+    font-size: 24px;
 }
 #detail-room .main-content .room-card .left .details-room span:nth-child(2) {
-  color: #7A7A7A;
+    color: #7a7a7a;
 }
 #detail-room .main-content .chat-section .chat-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 #detail-room .main-content .chat-section .chat-item .left .nameDate {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 #detail-room .main-content .chat-section .chat-item .left .nameDate .name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
 }
 #detail-room .main-content .chat-section .chat-item .left .nameDate .date {
-  font-size: 16px;
-  color: #7A7A7A;
+    font-size: 16px;
+    color: #7a7a7a;
 }
 #detail-room .main-content .chat-section .chat-item .left .text-box {
-  padding: 10px 15px;
-  background-color: #FFFFFF;
+    padding: 10px 15px;
+    background-color: #ffffff;
 }
 #detail-room .main-content .chat-section .chat-item.other .left .text-box {
-  padding: 10px 15px;
-  background-color: #7A7A7A;
+    padding: 10px 15px;
+    background-color: #7a7a7a;
 }
 #detail-room .main-content .chat-section .chat-item .right .btn {
-  height: 100% !important;
-  margin: 0 !important;
-  margin-left: 30px !important;
-  padding: 10px 20px !important;
+    height: 100% !important;
+    margin: 0 !important;
+    margin-left: 30px !important;
+    padding: 10px 20px !important;
 }
 #detail-room .input-chat {
-  width: 100%;
-  height: 20vh;
-  background-color: black;
+    width: 100%;
+    height: 20vh;
+    background-color: black;
 }
 #detail-room .input-chat .container-button {
-  width: 70% !important;
-  height: 60px !important;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+    width: 70% !important;
+    height: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 #detail-room .input-chat .container-button .input-control {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 20px 40px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
 }
 #detail-room .input-chat .container-button button {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  bottom: 10px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    bottom: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
 }
 #detail-room .input-chat .container-button button img {
-  width: 40px;
-  height: 44px;
+    width: 40px;
+    height: 44px;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  width: 100%;
-  overflow-x: hidden;
-}/*# sourceMappingURL=main.css.map */
+    width: 100%;
+    overflow-x: hidden;
+} /*# sourceMappingURL=main.css.map */
