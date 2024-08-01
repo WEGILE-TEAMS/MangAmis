@@ -21,7 +21,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required placeholder="Your username" />
+                    <input type="txext" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required placeholder="Your username" />
                     @error('username')
 
                     <div class="invalid-feedback">{{ $message }}</div>
