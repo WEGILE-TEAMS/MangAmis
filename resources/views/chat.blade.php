@@ -32,7 +32,7 @@
                     <div class="chat-item d-flex align-items-end {{ ($chat['user_id'] != Auth::user()->id) ? 'other' : '' }}">
                         <div class="left">
                             <div class="nameDate d-flex justify-content-between">
-                                <div class="name" style="margin-right: 30px">{{ $chat['username'] }}</div>
+                                <div class="name" style="margin-right: 30px;">{{ $chat['username'] }}</div>
                                 <div class="date">{{ $chat['date'] }}</div>
                             </div>
                             <div class="text-box" style="max-width: 30vw;">
