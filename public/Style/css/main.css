@@ -938,7 +938,10 @@ body {
 
 #manga {
     width: 100vw;
-    height: 110vh;
+}
+#manga #top-manga {
+    width: 100vw;
+    height: 120vh;
     background-image: url("../../images/bg-manga.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -960,7 +963,7 @@ body {
 }
 #manga #top-manga .container {
     width: 100%;
-    padding-top: 74px;
+    padding-top: 100px;
     color: #ffffff;
 }
 #manga #top-manga .container h5 {
@@ -1885,6 +1888,110 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-lines: 2;
+}
+
+#detail-room {
+    width: 100%;
+    background-image: url("../../images/bg-cover.png");
+    padding-top: 120px;
+}
+#detail-room .main-content {
+    height: 110vh;
+    overflow-y: scroll;
+}
+#detail-room .main-content::-webkit-scrollbar {
+    background-color: transparent;
+}
+#detail-room .main-content .room-card {
+    margin-bottom: 60px;
+}
+#detail-room .main-content .room-card .container-button {
+    margin-top: 14px;
+}
+#detail-room .main-content .room-card .container-button img {
+    width: 635px;
+    height: 338px;
+    padding: 5px;
+}
+#detail-room .main-content .room-card .container-button::after,
+#detail-room .main-content .room-card .container-button::before {
+    border-color: #ffffff !important;
+}
+#detail-room .main-content .room-card .left {
+    color: #ffffff;
+}
+#detail-room .main-content .room-card .left h5 {
+    font-size: 48px;
+    font-weight: 500;
+}
+#detail-room .main-content .room-card .left .details-room span {
+    font-size: 24px;
+}
+#detail-room .main-content .room-card .left .details-room span:nth-child(2) {
+    color: #7a7a7a;
+}
+#detail-room .main-content .chat-section .chat-item {
+    margin-bottom: 30px;
+}
+#detail-room .main-content .chat-section .chat-item .left .nameDate {
+    margin-bottom: 5px;
+}
+#detail-room .main-content .chat-section .chat-item .left .nameDate .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+#detail-room .main-content .chat-section .chat-item .left .nameDate .date {
+    font-size: 16px;
+    color: #7a7a7a;
+}
+#detail-room .main-content .chat-section .chat-item .left .text-box {
+    padding: 10px 15px;
+    background-color: #ffffff;
+}
+#detail-room .main-content .chat-section .chat-item.other .left .text-box {
+    padding: 10px 15px;
+    background-color: #7a7a7a;
+}
+#detail-room .main-content .chat-section .chat-item .right .btn {
+    height: 100% !important;
+    margin: 0 !important;
+    margin-left: 30px !important;
+    padding: 10px 20px !important;
+}
+#detail-room .input-chat {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+}
+#detail-room .input-chat .container-button {
+    width: 70% !important;
+    height: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#detail-room .input-chat .container-button .input-control {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+}
+#detail-room .input-chat .container-button button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    bottom: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+#detail-room .input-chat .container-button button img {
+    width: 40px;
+    height: 44px;
 }
 
 * {

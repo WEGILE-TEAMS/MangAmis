@@ -24,32 +24,32 @@
                     <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required placeholder="Your username" />
                     @error('username')
 
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="user_email">Email</label>
-                    <input type="email" class="form-control @error('user_email') is-invalid @enderror" id="user_email" name="user_email" value="{{ old('user_email') }}" required placeholder="Your email address" />
-                    @error('user_email')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="user_password">Password</label>
-                    <input type="password" class="form-control @error('user_password') is-invalid @enderror" id="user_password" name="user_password" required placeholder="Your password" />
-                    @error('user_password')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="d-flex flex-column align-items-center justify-content-center">
-                    <div class="container-button" style="width: 100% !important;">
-                        <button class="btn btn-primary" type="submit">SIGN UP</button>
-                    </div>
-                    <div class="container-button" style="width: 100% !important;">  
-                        <a href="/login" class="btn btn-secondary">SIGN IN</a>
-                    </div>
-                </div>
-            </form>
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="user_email">Email</label>
+                <input type="email" class="form-control @error('user_email') is-invalid @enderror" id="user_email" name="user_email" value="{{ old('user_email') }}" required placeholder="Your email address" />
+                @error('user_email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="user_password">Password</label>
+                <input type="password" class="form-control @error('user_password') is-invalid @enderror" id="user_password" name="user_password" required placeholder="Your password" />
+                @error('user_password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+              <div class="container-button" style="width: 100% !important;">
+                <button class="btn btn-primary" type="submit">SIGN UP</button>
+              </div>  
+              <div class="container-button" style="width: 100% !important;">
+                <a href="/login" class="btn btn-secondary">SIGN IN</a>
+              </div>  
+            </div
+        </form>
     </div>
 
     <div class="logo d-flex align-items-center justify-content-center">

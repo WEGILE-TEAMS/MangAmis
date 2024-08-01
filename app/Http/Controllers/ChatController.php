@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Chat;
+use App\Models\Community;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,7 @@ use Carbon\Carbon;
 class ChatController extends Controller
 {
     public function viewChat($community_id){
+        $detail = Community::findOrFail($community_id);
         $chats = Chat::where('community_id', $community_id)->get();
         $count = $chats->count();
         $user_id = Auth::id();
@@ -36,8 +38,34 @@ class ChatController extends Controller
         } else {
             $chatArray = [];
         }
-        return view('chat',['chats'=>$chatArray,
-            'community_id' => $community_id, 'user_id' => $user_id]);
+
+        $user_id = $detail->user_id;
+        $user = User::where('id', $user_id)->first();
+        $username = $user->username;
+        $comment = $detail->content;
+
+        if(isset($detail->image)) {
+            $image = $detail->image;
+        } else {
+            $image = [];
+        }
+
+        $detailArray = [
+            'user_id'=> $user_id,
+            'comment'=> $comment,
+            'username' => $username,
+            'image' => $image,
+            'date' => Carbon::parse($detail->created_at)->format('Y-m-d')
+        ];
+
+        // dd($detailArray);
+
+        return view('chat',[
+            'chats'=> $chatArray,
+            'community_id' => $community_id, 
+            'user_id' => $user_id,
+            'community' => $detailArray,
+        ]);
     }
 
     public function addChat(Request $request) {

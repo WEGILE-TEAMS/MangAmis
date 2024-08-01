@@ -19,6 +19,17 @@ class MangaDexService
     public function getUpdatedManga($limit)
     {
         try {
+            $tagsResponse = $this->client->request('GET', '/manga/tag');
+            $tags = json_decode($tagsResponse->getBody()->getContents(), true);
+            $excluded_tag_names = ["Boys' Love"];
+            $excluded_tag_ids = []; // Initialize the array before using it
+
+            foreach ($tags['data'] as $tag) {
+                if (in_array($tag['attributes']['name']['en'], $excluded_tag_names)) {
+                    $excluded_tag_ids[] = $tag['id'];
+                }
+            }
+
             $response = $this->client->request('GET', '/manga', [
                 'query' => [
                     'limit' => $limit,
@@ -29,6 +40,10 @@ class MangaDexService
                 ],
                 'headers' => [
                     'Accept' => 'application/json',
+                ],
+                'params' => [
+                    "contentRating[]" => ['safe'],
+                    "excludedTags[]" => $excluded_tag_ids,
                 ],
             ]);
 
