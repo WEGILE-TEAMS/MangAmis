@@ -26,11 +26,38 @@ class MangaController extends Controller
     private function baseApiRequest($client, $apiUrl)
     {
         try {
-            $response = $client->get($apiUrl, [
+            $response = $client->get("https://api.mangadex.org/manga/tag", [
                 'headers' => [
                     'User-Agent' => 'YourAppName/1.0',
                     'Accept' => 'application/json',
                 ]
+            ]);
+
+            if ($response->getStatusCode() !== 200) {
+                throw new Exception("Failed to fetch manga list, status code: " . $response->getStatusCode());
+            }
+
+            $tags = json_decode($response->getBody(), true);
+            $excluded_tag_names = ["Boys' Love"];
+            $excluded_tag_ids = []; // Initialize the array before using it
+
+            foreach ($tags['data'] as $tag) {
+                if (in_array($tag['attributes']['name']['en'], $excluded_tag_names)) {
+                    $excluded_tag_ids[] = $tag['id'];
+                }
+            }
+
+            // dd($excluded_tag_ids);
+
+            $response = $client->get($apiUrl, [
+                'headers' => [
+                    'User-Agent' => 'YourAppName/1.0',
+                    'Accept' => 'application/json',
+                ],
+                'params' => [
+                    "excludedTags[]" => $excluded_tag_ids,
+                    "contentRating[]" => ['safe']
+                ],
             ]);
 
             if ($response->getStatusCode() !== 200) {
