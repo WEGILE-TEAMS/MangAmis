@@ -23,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [MangaController::class, 'index'])->name('home')->middleware('Login');
+
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
