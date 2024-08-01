@@ -9,18 +9,15 @@ Login Page
 @endsection
 
 @section('content')
-@if(session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
-@if (session()->has('loginError'))
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{ session('loginError') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
+@push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+    <style>
+        .errors {
+            background-color: #C11336 !important;
+        }
+    </style>
+@endpush
+
 <section id="login">
     <div class="container">
         <h2>SIGN <span>IN</span></h2>
@@ -61,4 +58,32 @@ Login Page
         <img src="/images/MangaMis.png" alt="Logo" />
     </div>
 </section>
+
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script>
+
+@if (session('success'))
+    <script>
+        Toastify({
+        text: "{{ session('success') }}",
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, rgb(0, 176, 155), rgb(150, 201, 61))",
+        },
+        }).showToast();
+    </script>
+@endif
+
+@if (session('loginError'))
+    <script>
+        Toastify({
+        text: "{{ session('loginError') }}",
+        className: 'errors',
+        backgroundColor: '#C11336',
+        duration: 3000,
+        }).showToast();
+    </script> 
+@endif
+
+@endpush
 @endsection

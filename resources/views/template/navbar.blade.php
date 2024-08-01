@@ -15,9 +15,9 @@
                         <a class="nav-link fw-bolder navbar-items"
                             aria-current=" page" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item {{ (Route::currentRouteName() == '') ? 'active' : '' }}" style="margin: 0 25px;">
+                    <li class="nav-item {{ (Route::currentRouteName() == 'manga') ? 'active' : '' }}" style="margin: 0 25px;">
                         <a class="nav-link fw-bolder navbar-items"
-                            href="{{ route('home') }}">Manga</a>
+                            href="{{ route('manga') }}">Manga</a>
                     </li>
                     <li class="nav-item {{ (Route::currentRouteName() == 'randomManga') ? 'active' : '' }}" style="margin-right: 25px;">
                         <a class="nav-link fw-bolder navbar-items"
