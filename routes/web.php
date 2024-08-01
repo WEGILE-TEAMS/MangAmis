@@ -29,16 +29,15 @@ Route::get('/home', function (MangaController $mangaController) {
 });
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-// Route::get('/home', [MangaController::class, 'index']);
 
 Route::get('/detailManga/{id}/{title}/{author}/{desc}/{genres}/{cover_id}', [DetailMangaController::class, 'index'])
-    ->where('id', '[a-zA-Z0-9\-]+')
-    ->where('title', '.*')
-    ->where('author', '.*')
-    ->where('desc', '.*')
-    ->where('genres', '.*')
-    ->where('cover_id', '[a-zA-Z0-9\-]+')
-    ->name('detailManga');
+->where('id', '[a-zA-Z0-9\-]+')
+->where('title', '.*')
+->where('author', '.*')
+->where('desc', '.*')
+->where('genres', '.*')
+->where('cover_id', '[a-zA-Z0-9\-]+')
+->name('detailManga');
 
 Route::get('/proxy-image', [MangaController2::class, 'proxyImage'])->name('proxy-image');
 
@@ -50,12 +49,20 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', function(){
-    return view('updatedmanga2');
-});
 
 Route::get('/updated-manga', [
     UpdatedMangaController::class, 'showUpdatedManga'
 ]);
 
 Route::get('/proxy-image', [MangaController::class, 'proxyImage'])->name('proxy-image');
+
+//Route for Filter Manga Controller
+Route::get('/filter-manga/{genre}', [YourController::class, 'filterManga']);
+
+
+//Testing Route for Dashboard
+Route::get('/dashboard', function(){
+return view('updatedmanga2');
+});
+
+// Route::get('/home', [MangaController::class, 'index']);

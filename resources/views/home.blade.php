@@ -214,4 +214,4 @@
         <p>Description  = {{ $topManga['desc'] }}</p>
         <img src="{{ $topManga['image'] }}" alt="TopMangaImage" width="300" height="450">
     </div>
-@endsection
+@endsection --}}
