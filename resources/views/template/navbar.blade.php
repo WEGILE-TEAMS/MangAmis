@@ -35,8 +35,10 @@
                     <div class="circle"></div>
                 </a>
                 <div class="container-button">
-                    <input class="form-control me-2 rounded-0" type="search" placeholder="Search Manga..." aria-label="Search">
+                    <input id="search-input" class="form-control me-2 rounded-0" type="search" placeholder="Search Manga..." aria-label="Search">
                     <div class="icon-search"></div>
+                </div>
+                <div id="search-results" class="result d-none" class="result d-none">
                 </div>
             </form>
         </div>

@@ -550,6 +550,36 @@ class MangaController extends Controller
         }
     }
 
+    public function openDetailFromSearch(Request $request) {
+        $mangaTitle = $request['mangaTitle'];
+        $client = new Client();
+        $response = $client->get('https://api.mangadex.org/manga?title='.$mangaTitle);
+        $data = json_decode($response->getBody(), true);
+        $manga = $data['data'][0];
+
+        $manga_id = $manga['id'];
+        $author = $this->getAuthor($client, $manga);
+        $genres = $this->getGenre($manga);
+        $chapters = $this->getChaptersFromMangaDex($manga_id);
+        $coverUrl = $this->getCover($client, $manga);
+        $similarManga = $this->getSimilarManga();
+
+        $temp = [
+            'manga_title' => $manga['attributes']['title']['en'] ?? 'N/A',
+            'title' => $manga['attributes']['title']['en'] ?? 'N/A',
+            'manga_id' => $manga['id'],
+            'manga_author' => $author,
+            'manga_desc' => $manga['attributes']['description']['en'] ?? 'No description available',
+            'genres' => $genres,
+            'chapters' => $chapters,
+            'image' => route('proxy-image', ['url' => urlencode($coverUrl)]),
+            'similar' => $similarManga
+        ];
+
+        // dd($temp);
+        return view('detail_manga', compact('temp'));
+    }
+
     public function randomManga() {
         $client = new Client();
         $mangaList = [];

@@ -18,23 +18,21 @@ class SearchController extends Controller
         $apiUrl = 'https://api.mangadex.org/manga';
         $baseImageUrl = "https://uploads.mangadex.org/covers/";
 
-
         $response = $client->request('GET', $apiUrl, [
             'query' => [
                 'title' => $query,
                 'limit' => $limit,
             ],
         ]);
-        // dd($response);
+
+        $combinedList = [];
 
         if ($response->getStatusCode() == 200) {
             $mangaList = json_decode($response->getBody()->getContents(), true)['data'];
-            // dd($mangaList);
             $mangaCount = count($mangaList);
             $coverId = null;
-            // dd($mangaCount);
 
-            for($i=0;$i<$mangaCount;$i++){
+            for ($i = 0; $i < $mangaCount; $i++) {
                 foreach ($mangaList[$i]['relationships'] as $relationship) {
                     if ($relationship['type'] === 'cover_art') {
                         $coverId = $relationship['id'];
@@ -45,6 +43,7 @@ class SearchController extends Controller
                 if (!$coverId) {
                     throw new Exception("Cover ID not found.");
                 }
+
                 $coverResponse = $client->get("https://api.mangadex.org/cover/{$coverId}", [
                     'headers' => [
                         'User-Agent' => 'YourAppName/1.0',
@@ -57,11 +56,24 @@ class SearchController extends Controller
                 }
 
                 $coverData = json_decode($coverResponse->getBody(), true);
-                // dd($coverData);
-                Log::info('Cover image response:', $coverData);
-                // dd($coverData);
                 $coverFileName = $coverData['data']['attributes']['fileName'];
                 $mangaId = $mangaList[$i]['id'];
+
+                $relationships = $mangaList[$i]['relationships'];
+
+                // Get Author Id
+                $authorId = null;
+                foreach ($relationships as $relationship) {
+                    if ($relationship['type'] === 'author') {
+                        $authorId = $relationship['id'];
+                    }
+                }
+
+                // Get Author name
+                $author = 'https://api.mangadex.org/author/' . $authorId;
+                $author = $client->get($author);
+                $author = json_decode($author->getBody(), true);
+                $author = $author['data']['attributes']['name'];
 
                 $coverUrl = $baseImageUrl . $mangaId . '/' . $coverFileName;
                 $combinedList[] = [
@@ -69,15 +81,20 @@ class SearchController extends Controller
                     'title' => $mangaList[$i]['attributes']['title']['en'] ?? 'No English title',
                     'description' => $mangaList[$i]['attributes']['description']['en'] ?? 'No English description',
                     'image' => route('proxy-image', ['url' => urlencode($coverUrl)]),
+                    'author' => $author
                 ];
-                // dd($combinedList);
             }
-        }else {
-            $combinedList = [];
+
+            
+        }
+
+        if ($request->ajax()) {
+            return response()->json(['html' => view('partials.search_results', compact('combinedList'))->render()]);
         }
 
         return view('search', ['combinedList' => $combinedList, 'query' => $query]);
     }
+
 
     public function proxyImage(Request $request)
     {
