@@ -42,9 +42,13 @@
                     @enderror
                 </div>
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <button class="btn btn-primary" type="submit">SIGN UP</button>
-                    <a href="/login" class="btn btn-secondary">SIGN IN</a>
-                </div
+                    <div class="container-button" style="width: 100% !important;">
+                        <button class="btn btn-primary" type="submit">SIGN UP</button>
+                    </div>
+                    <div class="container-button" style="width: 100% !important;">  
+                        <a href="/login" class="btn btn-secondary">SIGN IN</a>
+                    </div>
+                </div>
             </form>
     </div>
 

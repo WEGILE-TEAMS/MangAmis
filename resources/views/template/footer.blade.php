@@ -1,14 +1,6 @@
-@extends('template/master')
-
-
-@section('styles')
-<link rel="stylesheet" href="{{ asset('Style/css/main.css') }}">
-@endsection
-
-@section('footer')
 <section id="footer">
     <div class="logo">
-        <img src="/images/MangaMis.png" alt="" />
+        <img src="{{ asset('/images/MangaMis.png') }}" alt="" />
     </div>
     <div class="container links text-center">
         <div class="row row-cols-5 ehe">
@@ -43,4 +35,3 @@
         <h6>Copyright Ⓒ <span>WEGILE</span>. All Rights Reserved.</h6>
     </div>
 </section>
-@endsection

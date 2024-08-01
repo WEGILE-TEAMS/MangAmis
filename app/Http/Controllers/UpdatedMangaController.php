@@ -15,7 +15,7 @@ class UpdatedMangaController extends Controller
 
     public function showUpdatedManga()
     {
-        $manga = $this->mangaDexService->getUpdatedManga();
+        $manga = $this->mangaDexService->getUpdatedManga(4);
 
         if (isset($manga['error']) && $manga['error']) {
             return response()->json(['error' => $manga['message']], 500);

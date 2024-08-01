@@ -12,24 +12,30 @@ class MangaHistoryController extends Controller
 {
     public function saveMangaHistory(Request $request)
     {
-        $validatedData = $request->validate([
-            'manga_id' => 'required|string',
-            'chapter_id' => 'required|string',
-        ]);
+        try {
+            $validatedData = $request->validate([
+                'manga_id' => 'required|string',
+                'chapter_id' => 'required|string',
+            ]);
 
-        Log::info('Saving manga history', $validatedData);
+            Log::info('Saving manga history', $validatedData);
 
-        $history = MangaHistory::create([
-            'user_id' => Auth::id(),
-            'manga_id' => $validatedData['manga_id'],
-            'chapter_id' => $validatedData['chapter_id'],
-            'read_at' => now(),
-        ]);
+            $history = MangaHistory::create([
+                'user_id' => Auth::id(),
+                'manga_id' => $validatedData['manga_id'],
+                'chapter_id' => $validatedData['chapter_id'],
+                'read_at' => now(),
+            ]);
 
-        Log::info('Manga history saved', ['history' => $history]);
+            Log::info('Manga history saved', ['history' => $history]);
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            Log::error('Error saving manga history', ['error' => $e->getMessage()]);
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
     }
+
 
     public function show(){
         $temp=[];
