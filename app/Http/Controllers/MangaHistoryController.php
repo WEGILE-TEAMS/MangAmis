@@ -32,6 +32,7 @@ class MangaHistoryController extends Controller
     }
 
     public function show(){
+        $temp=[];
         $userId = Auth::id();
         $histories = MangaHistory::where('user_id', $userId)->get();
         // dd($histories);
@@ -98,7 +99,7 @@ class MangaHistoryController extends Controller
                 "genre" => $genres,
             ];
 
-            // dd($temp);
+            dd($temp);
 
         }
         return view('history', ['histories' => $temp]);
@@ -108,6 +109,7 @@ class MangaHistoryController extends Controller
     {
         $client = new Client(['verify' => false]);
         $imageUrl = urldecode($request->input('url'));
+        
 
         try {
             $response = $client->get($imageUrl, [
