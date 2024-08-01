@@ -5,6 +5,7 @@ use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DetailCommunityController;
+use App\Http\Controllers\FilterManga;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RegisterController;
@@ -23,11 +24,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('Login');
 Route::get('/home', [MangaController::class, 'index'])->name('home')->middleware('Login');
 
 // Manga Service
-Route::get('/manga', function () {
-    return view('manga');
-})->name('manga');
+Route::get('/manga', [MangaController::class, 'indexManga'])->name('manga');
 
 Route::get('/search', [SearchController::class, 'search'])->name('manga.search');
+Route::get('/filter-manga/{genre}', [FilterManga::class, 'filterManga']);
 Route::get('/randomManga', [MangaController::class, 'randomManga'])->name('randomManga')->middleware('Login');
 Route::get('/detailManga', [MangaController::class, 'detailManga'])->name('detailManga')->middleware('Login');
 Route::get('/detail-Manga', [MangaController::class, 'openDetailFromSearch'])->name('detailManga.search')->middleware('Login');

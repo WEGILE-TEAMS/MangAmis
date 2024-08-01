@@ -646,4 +646,51 @@ class MangaController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+
+    public function indexManga() {
+        
+            $client = new Client(['verify' => false]); 
+
+            // Get manga
+            // $data = $this->baseApiRequest($client, $apiUrl);
+            // $data = $data['data'];
+
+            $data = $this->mangaDexService->getUpdatedManga(4);
+
+            if (isset($data['error']) && $data['error']) {
+                return response()->json(['error' => $data['message']], 500);
+            }
+
+
+            $data = $data['data'];
+            // dd($data);
+            for ($x = 0; $x < 4; $x++) {
+                if (!isset($data[$x])) continue;
+
+                // Get Author
+                $author = $this->getAuthor($client, $data[$x]);
+
+                // Get genres
+                $genres = $this->getGenre($data[1]);
+
+                // Get Cover
+                $coverUrl = $this->getCover($client, $data[$x]);
+
+                // Build final response
+                $temp[] = [
+                    "id" => $data[$x]['id'],
+                    "title" => $data[$x]['attributes']['title']['en'] ?? 'N/A',
+                    "desc" => $data[$x]['attributes']['description']['en'] ?? 'No description available',
+                    "cover_url" => $coverUrl,
+                    "image" => route('proxy-image', ['url' => urlencode($coverUrl)]),
+                    "author_name" => $author,
+                    "genre" => $genres,
+                    "chapter_title" => $data[$x]["latestChapter"]['attributes']['title'] ?? 'N/A',
+                    "chapter_number" => $data[$x]["latestChapter"]['attributes']['chapter'] ?? 'N/A'
+                ];
+            }
+
+        return view('manga', compact('temp'));
+    }
 }
+
