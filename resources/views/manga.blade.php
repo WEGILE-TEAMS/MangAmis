@@ -57,10 +57,10 @@
 @endpush
 <section id="manga">
     <div id="top-manga">
-        <div class="bg-line d-flex justify-content-center align-items-center">
+        {{-- <div class="bg-line d-flex justify-content-center align-items-center">
             <div class="bg"></div>
-        </div>
-        <div class="container">
+        </div> --}}
+        <div class="container" style="z-index: 10 !important;">
             <h5>LASTEST UPDATE</h5>
             <div class="lines"></div>
             <div class="row d-flex justify-content-between align-items-center">

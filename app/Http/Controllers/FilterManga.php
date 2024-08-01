@@ -23,7 +23,7 @@ class FilterManga extends Controller
                 'Accept' => 'application/json',
             ],
             'query' => [
-                'limit' => 100,
+                'limit' => 100  ,
             ]
         ]);
 
