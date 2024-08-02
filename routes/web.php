@@ -40,7 +40,7 @@ Route::put('/profile', [ProfileController::class, 'update'])->name('profile.upda
 
 // Community
 Route::get('/community', [CommunityController::class, 'community'])->name('community')->middleware('Login');
-Route::get('/detailCommunity', [CommunityController::class, 'community'])->name('community')->middleware('Login');
+// Route::get('/detailCommunity', [CommunityController::class, 'community'])->name('community')->middleware('Login');
 Route::get('/detailCommunity/{manga_id}', [DetailCommunityController::class, 'detailCommunity'])->name('detailCommunity')->middleware('Login');
 Route::get('/chat/{community_id}', [ChatController::class, 'viewChat'])->name('viewChat')->middleware('Login');
 
