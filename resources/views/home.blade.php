@@ -2,6 +2,11 @@
 
 @section('title', 'Home Page')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('Style/css/main.css') }}">
+    @include('template/footer')
+@endsection
+
 @section('content')
 @include('template.navbar')
 <section id="home">
