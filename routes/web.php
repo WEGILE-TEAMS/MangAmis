@@ -21,6 +21,10 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('Login');
 // End of Auth
 
+Route::get('/', function () {
+ return redirect('/home');    
+});
+
 Route::get('/home', [MangaController::class, 'index'])->name('home')->middleware('Login');
 
 // Manga Service
