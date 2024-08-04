@@ -1,3 +1,14 @@
+<style>
+    .circle {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://asset.kompas.com/crops/KvL21Jr_3PgSj8DjKIMInpZZzpQ=/0x0:612x408/1200x800/data/photo/2023/05/11/645cd00cb23ec.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+</style>
+
 <section id="navbar">
     <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid">
@@ -32,7 +43,8 @@
             <form class="d-flex align-items-center search-box" role="search">
                 <div class="lines"></div>
                 <a href="{{ route('profile.show') }}" class="profile d-flex justify-content-center align-items-center {{ (Route::currentRouteName() == 'profile.show') ? 'active' : '' }}">
-                    <div class="circle"></div>
+                    <div class="circle">
+                    </div>
                 </a>
                 <div class="container-button">
                     <input id="search-input" class="form-control me-2 rounded-0" type="search" placeholder="Search Manga..." aria-label="Search">

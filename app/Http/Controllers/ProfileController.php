@@ -175,8 +175,8 @@ class ProfileController extends Controller
         }
 
         $user->save();
-        
-        return redirect()->back()->with('success','User Profile Berhasil di Update!');
+
+        return redirect()->back()->with('success','User Profile Update Successfully!');
 
     }
 }

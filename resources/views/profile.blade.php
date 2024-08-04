@@ -1,7 +1,16 @@
 @extends('template.master')
 
 @section('title', 'Home Page')
-
+<style>
+    .inner-img {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://asset.kompas.com/crops/KvL21Jr_3PgSj8DjKIMInpZZzpQ=/0x0:612x408/1200x800/data/photo/2023/05/11/645cd00cb23ec.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+</style>
 @section('content')
 @include('template.navbar')
 @push('styles')
@@ -23,7 +32,7 @@
                         @csrf
                         <button type="submit" class="btn btn-secondary" style="padding: 10px !important;">Sign Out</button>
                     </form>
-                    
+
                 </div>
             </div>
             <div class="profile-section mt-5">
@@ -39,19 +48,19 @@
                                 <label for="username">Username:</label>
                                 <input type="text" name="username" class="form-control" id="username" placeholder="{{ Auth::user()->username }}">
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="email">Email:</label>
                                 <input type="text" name="user_email" class="form-control" id="email" placeholder="{{ Auth::user()->user_email }}">
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="Password">Password</label>
                                 <input type="password" class="form-control" id="user_password" name="user_password" placeholder="">
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="text-end">
                         <div class="container-button">
@@ -126,8 +135,8 @@
         backgroundColor: '#C11336',
         duration: 3000,
         }).showToast();
-    </script> 
-    @endforeach   
+    </script>
+    @endforeach
 @endif
 
 @endpush

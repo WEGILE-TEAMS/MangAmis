@@ -63,7 +63,7 @@
                     </div>
                     <div class="container-button">
                         @php
-                            $totalChapters = count($temp['chapters']); 
+                            $totalChapters = count($temp['chapters']);
 
                             if($totalChapters > 0) {
                                 $lastIndex = count($temp['chapters']) - 1;
@@ -91,15 +91,15 @@
 
             @if (!empty($temp['chapters']))
                 @foreach ($temp['chapters'] as $index => $chapter)
-                <a 
+                <a
                 href="{{ route('read.manga', [
                     "mangaTitle" => $temp['title'],
                     "chapterId" => $chapter['id']
-                ]) }}" 
+                ]) }}"
                 data-manga-id = "{{ $temp['manga_id'] }}" data-chapter-id="{{ $chapter['id'] }}"
                 class="manga-link chapter-item d-flex justify-content-between align-items-center {{ $index > 4 ? 'chapter-item-top' : '' }}">
                     <div class="d-flex align-items-center">
-                        <div class="chapter-cover"></div>
+                        {{-- <div class="chapter-cover"></div> --}}
                         <h6 class="chapter-title">Chapter {{ $chapter['attributes']['chapter'] }} : {{ $chapter['attributes']['title'] }}</h6>
                     </div>
                     <span>May, 14 2024</span>
@@ -111,8 +111,8 @@
                 </a>
                 @endforeach
             @else
-            <a 
-            href="#" 
+            <a
+            href="#"
             class="manga-link chapter-item d-flex justify-content-center align-items-center">
                 <h5 class="title">No Chapters Available</h5>
             </a>
